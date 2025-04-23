@@ -1,36 +1,47 @@
 package com.capacitorjs.plugins.filetransfer
 
+import com.getcapacitor.JSObject
 import io.ionic.libs.ionfiletransferlib.model.IONFLTRException
 
 object FileTransferErrors {
-    private fun formatErrorCode(number: Int): String {
+    fun formatErrorCode(number: Int): String {
         return "OS-PLUG-FLTR-" + number.toString().padStart(4, '0')
     }
 
     data class ErrorInfo(
         val code: String,
-        val message: String
-    )
-
-    val cordovaNotDefined = ErrorInfo(
-        code = formatErrorCode(1),
-        message = "Cordova / Capacitor isn't defined."
-    )
-
-    val oldPluginVersion = ErrorInfo(
-        code = formatErrorCode(2),
-        message = "The app is running with an old version of the plugin. Please create a new mobile package."
-    )
-
-    val pluginNotDefined = ErrorInfo(
-        code = formatErrorCode(3),
-        message = "The File Transfer plugin is not defined. Make sure the mobile package is valid."
-    )
-
-    val bridgeNotInitialized = ErrorInfo(
-        code = formatErrorCode(4),
-        message = "Cordova / Capacitor bridge isn't initialized."
-    )
+        val message: String,
+        val source: String? = null,
+        val target: String? = null,
+        val httpStatus: Int? = null,
+        val body: String? = null,
+        val headers: Map<String, List<String>>? = null,
+        val exception: String? = null
+    ) {
+        /**
+         * Converts the ErrorInfo to a JSObject that can be passed to PluginCall.reject
+         */
+        fun toJSObject(): JSObject {
+            return JSObject().apply {
+                put("code", code)
+                put("message", message)
+                if (source != null) put("source", source)
+                if (target != null) put("target", target)
+                if (httpStatus != null) put("httpStatus", httpStatus)
+                if (body != null) put("body", body)
+                
+                if (headers != null) {
+                    val headersObj = JSObject()
+                    headers.forEach { (key, values) ->
+                        headersObj.put(key, values.firstOrNull() ?: "")
+                    }
+                    put("headers", headersObj)
+                }
+                
+                if (exception != null) put("exception", exception)
+            }
+        }
+    }
 
     val invalidParameters = ErrorInfo(
         code = formatErrorCode(5),
@@ -42,7 +53,8 @@ object FileTransferErrors {
     } else {
         ErrorInfo(
             code = formatErrorCode(6),
-            message = "Invalid server URL was provided - $url"
+            message = "Invalid server URL was provided - $url",
+            source = url
         )
     }
 
@@ -63,12 +75,13 @@ object FileTransferErrors {
 
     val notModified = ErrorInfo(
         code = formatErrorCode(10),
-        message = "The server responded with HTTP 304 – Not Modified. If you want to avoid this, check your headers related to HTTP caching."
+        message = "The server responded with HTTP 304 – Not Modified. If you want to avoid this, check your headers related to HTTP caching.",
+        httpStatus = 304
     )
-
-    val genericError = ErrorInfo(
+    fun genericError(cause: Throwable) = ErrorInfo(
         code = formatErrorCode(11),
-        message = "The operation failed with an error."
+        message = "The operation failed with an error - ${cause.localizedMessage}",
+        exception = cause.localizedMessage
     )
 
     val urlEmpty = ErrorInfo(
@@ -82,10 +95,24 @@ fun Throwable.toFileTransferError(): FileTransferErrors.ErrorInfo = when (this) 
     is IONFLTRException.EmptyURL -> FileTransferErrors.urlEmpty
     is IONFLTRException.InvalidURL -> FileTransferErrors.invalidServerUrl(url)
     is IONFLTRException.FileDoesNotExist -> FileTransferErrors.fileDoesNotExist
-    is IONFLTRException.CannotCreateDirectory -> FileTransferErrors.genericError
-    is IONFLTRException.HttpError -> if (responseCode == "304") FileTransferErrors.notModified else FileTransferErrors.genericError
+    is IONFLTRException.CannotCreateDirectory -> FileTransferErrors.genericError(this)
+    is IONFLTRException.HttpError -> {
+        if (responseCode == "304") {
+            FileTransferErrors.notModified
+        } else {
+            FileTransferErrors.ErrorInfo(
+                code = FileTransferErrors.formatErrorCode(11),
+                message = "HTTP error: $responseCode - $message",
+                httpStatus = responseCode.toIntOrNull(),
+                body = responseBody,
+                headers = headers,
+                exception = message
+            )
+        }
+    }
     is IONFLTRException.ConnectionError -> FileTransferErrors.connectionError
-    is IONFLTRException.TransferError -> FileTransferErrors.genericError
-    is IONFLTRException.UnknownError -> FileTransferErrors.genericError
-    else -> FileTransferErrors.genericError
+    is IONFLTRException.TransferError -> FileTransferErrors.genericError(this)
+    is IONFLTRException.UnknownError -> FileTransferErrors.genericError(this)
+    is SecurityException -> FileTransferErrors.permissionDenied
+    else -> FileTransferErrors.genericError(this)
 }

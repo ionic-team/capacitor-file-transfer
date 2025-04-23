@@ -1,4 +1,6 @@
 import { FileTransfer } from '@capacitor/file-transfer';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Capacitor } from '@capacitor/core';
 
 window.customElements.define(
   'file-transfer-app',
@@ -103,8 +105,17 @@ window.customElements.define(
               <input type="url" id="customDownloadUrl" placeholder="Or enter custom URL">
             </div>
             <div class="form-group">
-              <label for="downloadPath">Save Path:</label>
-              <input type="text" id="downloadPath" placeholder="/path/to/save/file">
+              <label for="downloadDirectory">Directory:</label>
+              <select id="downloadDirectory">
+                <option value="DOCUMENTS">Documents</option>
+                <option value="DATA">App Data</option>
+                <option value="CACHE">Cache</option>
+                <option value="EXTERNAL">External Storage</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="downloadPath">File Name:</label>
+              <input type="text" id="downloadPath" placeholder="filename.ext">
             </div>
             <div class="form-group">
               <label>
@@ -205,13 +216,33 @@ window.customElements.define(
 
         // Set default paths
         const downloadPath = this.shadowRoot.querySelector('#downloadPath');
-        downloadPath.value = '/storage/emulated/0/Download/test.pdf';
-        if (Capacitor.getPlatform() === 'web') {
-          downloadPath.value = 'Downloads/';
-        }
+        downloadPath.value = 'test.pdf';
+
+        // Initialize directories
+        await this.initializeDirectories();
 
       } catch (error) {
         this.showError('Failed to initialize: ' + error.message);
+      }
+    }
+
+    async initializeDirectories() {
+      // Make sure directories exist
+      try {
+        // Create a test directory in Documents to verify everything is working
+        if (Capacitor.getPlatform() !== 'web') {
+          await Filesystem.mkdir({
+            path: 'file-transfer-test',
+            directory: Directory.Documents,
+            recursive: true
+          });
+          
+          this.showResponse('Directory check', { 
+            message: 'Filesystem access confirmed - directories ready' 
+          });
+        }
+      } catch (error) {
+        this.showError('Directory initialization error: ' + error.message);
       }
     }
 
@@ -227,13 +258,30 @@ window.customElements.define(
       return customUrl || selectUrl;
     }
 
+    getSelectedDirectory() {
+      const directorySelect = this.shadowRoot.querySelector('#downloadDirectory');
+      const selectedValue = directorySelect.value;
+
+      if (selectedValue === 'DOCUMENTS') {
+        return Directory.Documents;
+      } else if (selectedValue === 'DATA') {
+        return Directory.Data;
+      } else if (selectedValue === 'CACHE') {
+        return Directory.Cache;
+      } else if (selectedValue === 'EXTERNAL') {
+        return Directory.External;
+      }
+      return Directory.Documents;
+    }
+
     async handleDownload() {
       try {
         const url = this.getDownloadUrl();
-        const path = this.shadowRoot.querySelector('#downloadPath').value;
+        const fileName = this.shadowRoot.querySelector('#downloadPath').value;
+        const selectedDirectory = this.getSelectedDirectory();
 
-        if (!url || !path) {
-          this.showError('Please provide both URL and path');
+        if (!url || !fileName) {
+          this.showError('Please provide both URL and filename');
           return;
         }
 
@@ -243,10 +291,41 @@ window.customElements.define(
         const downloadProgressContainer = this.shadowRoot.querySelector('#downloadProgressContainer');
         downloadProgressContainer.style.display = downloadProgress.checked ? 'block' : 'none';
 
+        let filePath;
+        
+        if (Capacitor.getPlatform() === 'web') {
+          // For web, we'll use a simple path
+          filePath = fileName;
+        } else {
+          // For native platforms, get a proper path from the Filesystem plugin
+          try {
+            // We'll put the file in the test directory we created
+            const pathResult = await Filesystem.getUri({
+              path: 'file-transfer-test/' + fileName,
+              directory: selectedDirectory
+            });
+            filePath = pathResult.uri;
+            
+            // For Android, we might need to remove the file:// prefix
+            if (Capacitor.getPlatform() === 'android' && filePath.startsWith('file://')) {
+              filePath = filePath.substring(7);
+            }
+          } catch (error) {
+            // If getUri fails, use a reasonable default path
+            if (Capacitor.getPlatform() === 'android') {
+              filePath = '/storage/emulated/0/Download/' + fileName;
+            } else if (Capacitor.getPlatform() === 'ios') {
+              filePath = fileName; // iOS will handle this appropriately
+            } else {
+              filePath = fileName;
+            }
+          }
+        }
+
         // Download file
         const result = await FileTransfer.downloadFile({
           url,
-          path,
+          path: filePath,
           progress: downloadProgress.checked,
         });
 

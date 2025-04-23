@@ -38,6 +38,8 @@ Perform an HTTP request to a server and download the file to the specified desti
 
 **Returns:** <code>Promise&lt;<a href="#downloadfileresult">DownloadFileResult</a>&gt;</code>
 
+**Since:** 1.0.0
+
 --------------------
 
 
@@ -54,6 +56,8 @@ Perform an HTTP request to upload a file to a server
 | **`options`** | <code><a href="#uploadfileoptions">UploadFileOptions</a></code> |
 
 **Returns:** <code>Promise&lt;<a href="#uploadfileresult">UploadFileResult</a>&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -73,6 +77,8 @@ Add a listener to file transfer (download or upload) progress events.
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
+**Since:** 1.0.0
+
 --------------------
 
 
@@ -84,6 +90,8 @@ removeAllListeners() => Promise<void>
 
 Remove all listeners for this plugin.
 
+**Since:** 1.0.0
+
 --------------------
 
 
@@ -92,40 +100,40 @@ Remove all listeners for this plugin.
 
 #### DownloadFileResult
 
-| Prop       | Type                | Description                                                          |
-| ---------- | ------------------- | -------------------------------------------------------------------- |
-| **`path`** | <code>string</code> | The path the file was downloaded to.                                 |
-| **`blob`** | <code>Blob</code>   | The blob data of the downloaded file. This is only available on web. |
+| Prop       | Type                | Description                                                          | Since |
+| ---------- | ------------------- | -------------------------------------------------------------------- | ----- |
+| **`path`** | <code>string</code> | The path the file was downloaded to.                                 | 1.0.0 |
+| **`blob`** | <code>Blob</code>   | The blob data of the downloaded file. This is only available on web. | 1.0.0 |
 
 
 #### DownloadFileOptions
 
-| Prop           | Type                 | Description                                                                                                                                                                        |
-| -------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`path`**     | <code>string</code>  | The full file path the downloaded file should be moved to.                                                                                                                         |
-| **`progress`** | <code>boolean</code> | If true, progress event will be dispatched on every chunk received. See addListener() for more information. Chunks are throttled to every 100ms on Android/iOS to avoid slowdowns. |
+| Prop           | Type                 | Description                                                                                                                                                                        | Since |
+| -------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`path`**     | <code>string</code>  | The full file path the downloaded file should be moved to.                                                                                                                         | 1.0.0 |
+| **`progress`** | <code>boolean</code> | If true, progress event will be dispatched on every chunk received. See addListener() for more information. Chunks are throttled to every 100ms on Android/iOS to avoid slowdowns. | 1.0.0 |
 
 
 #### UploadFileResult
 
-| Prop               | Type                                    | Description                                            |
-| ------------------ | --------------------------------------- | ------------------------------------------------------ |
-| **`bytesSent`**    | <code>number</code>                     | Total number of bytes uploaded                         |
-| **`responseCode`** | <code>string</code>                     | HTTP response code for the upload                      |
-| **`response`**     | <code>string</code>                     | HTTP response body from the upload (when available)    |
-| **`headers`**      | <code>{ [key: string]: string; }</code> | HTTP headers from the upload response (when available) |
+| Prop               | Type                                    | Description                                            | Since |
+| ------------------ | --------------------------------------- | ------------------------------------------------------ | ----- |
+| **`bytesSent`**    | <code>number</code>                     | Total number of bytes uploaded                         | 1.0.0 |
+| **`responseCode`** | <code>string</code>                     | HTTP response code for the upload                      | 1.0.0 |
+| **`response`**     | <code>string</code>                     | HTTP response body from the upload (when available)    | 1.0.0 |
+| **`headers`**      | <code>{ [key: string]: string; }</code> | HTTP headers from the upload response (when available) | 1.0.0 |
 
 
 #### UploadFileOptions
 
-| Prop              | Type                 | Description                                                                                                                                                                        |
-| ----------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`path`**        | <code>string</code>  | Full file path of the file to upload.                                                                                                                                              |
-| **`blob`**        | <code>Blob</code>    | Blob data to upload. Will use this instead of path if provided. This is only available on web.                                                                                     |
-| **`chunkedMode`** | <code>boolean</code> | Whether to upload data in a chunked streaming mode. Not supported on web.                                                                                                          |
-| **`mimeType`**    | <code>string</code>  | Mime type of the data to upload. Only used if "Content-Type" header was not provided.                                                                                              |
-| **`fileKey`**     | <code>string</code>  | Type of form element. The default is set to "file". Only used if "Content-Type" header was not provided.                                                                           |
-| **`progress`**    | <code>boolean</code> | If true, progress event will be dispatched on every chunk received. See addListener() for more information. Chunks are throttled to every 100ms on Android/iOS to avoid slowdowns. |
+| Prop              | Type                 | Description                                                                                                                                                                        | Since |
+| ----------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`path`**        | <code>string</code>  | Full file path of the file to upload.                                                                                                                                              | 1.0.0 |
+| **`blob`**        | <code>Blob</code>    | Blob data to upload. Will use this instead of path if provided. This is only available on web.                                                                                     | 1.0.0 |
+| **`chunkedMode`** | <code>boolean</code> | Whether to upload data in a chunked streaming mode. Not supported on web.                                                                                                          | 1.0.0 |
+| **`mimeType`**    | <code>string</code>  | Mime type of the data to upload. Only used if "Content-Type" header was not provided.                                                                                              | 1.0.0 |
+| **`fileKey`**     | <code>string</code>  | Type of form element. The default is set to "file". Only used if "Content-Type" header was not provided.                                                                           | 1.0.0 |
+| **`progress`**    | <code>boolean</code> | If true, progress event will be dispatched on every chunk received. See addListener() for more information. Chunks are throttled to every 100ms on Android/iOS to avoid slowdowns. | 1.0.0 |
 
 
 #### PluginListenerHandle
@@ -137,12 +145,12 @@ Remove all listeners for this plugin.
 
 #### ProgressStatus
 
-| Prop                   | Type                                | Description                                                                                                                         |
-| ---------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **`type`**             | <code>'download' \| 'upload'</code> | The type of transfer operation (download or upload).                                                                                |
-| **`url`**              | <code>string</code>                 | The url of the file associated with the transfer (download or upload).                                                              |
-| **`bytes`**            | <code>number</code>                 | The number of bytes transferred so far.                                                                                             |
-| **`contentLength`**    | <code>number</code>                 | The total number of bytes associated with the file transfer.                                                                        |
-| **`lengthComputable`** | <code>boolean</code>                | Whether or not the contentLength value is relevant. In some situations, the total number of bytes may not be possible to determine. |
+| Prop                   | Type                                | Description                                                                                                                         | Since |
+| ---------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`type`**             | <code>'download' \| 'upload'</code> | The type of transfer operation (download or upload).                                                                                | 1.0.0 |
+| **`url`**              | <code>string</code>                 | The url of the file associated with the transfer (download or upload).                                                              | 1.0.0 |
+| **`bytes`**            | <code>number</code>                 | The number of bytes transferred so far.                                                                                             | 1.0.0 |
+| **`contentLength`**    | <code>number</code>                 | The total number of bytes associated with the file transfer.                                                                        | 1.0.0 |
+| **`lengthComputable`** | <code>boolean</code>                | Whether or not the contentLength value is relevant. In some situations, the total number of bytes may not be possible to determine. | 1.0.0 |
 
 </docgen-api>
