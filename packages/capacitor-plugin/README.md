@@ -154,3 +154,27 @@ Remove all listeners for this plugin.
 | **`lengthComputable`** | <code>boolean</code>                | Whether or not the contentLength value is relevant. In some situations, the total number of bytes may not be possible to determine. | 1.0.0 |
 
 </docgen-api>
+
+### Errors
+The plugin returns the following errors with specific codes on iOS, Android, and Web:
+
+| Error code        | Platform(s)      | Description                      |
+|-------------------|------------------|----------------------------------|
+| OS-PLUG-FLTR-0005 | Android, iOS     | The method's input parameters aren't valid. |
+| OS-PLUG-FLTR-0006 | Android, iOS     | Invalid server URL was provided or URL is empty. |
+| OS-PLUG-FLTR-0007 | Android, iOS     | Unable to perform operation, user denied permission request. |
+| OS-PLUG-FLTR-0008 | Android, iOS     | Operation failed because file does not exist. |
+| OS-PLUG-FLTR-0009 | Android, iOS, Web | Failed to connect to server. |
+| OS-PLUG-FLTR-0010 | Android, iOS     | The server responded with HTTP 304 – Not Modified. If you want to avoid this, check your headers related to HTTP caching. |
+| OS-PLUG-FLTR-0011 | Android, iOS     | The server responded with an HTTP error status code. |
+| OS-PLUG-FLTR-0012 | Android, iOS, Web | The operation failed with an error (generic error). |
+
+When handling errors in your application, you can check the error code to determine the specific issue. The error object typically contains additional information such as:
+
+- `code`: The error code (as shown in the table above)
+- `message`: A human-readable description of the error
+- `source`: The source of the transfer (file path or URL)
+- `target`: The target of the transfer (file path or URL)
+- `httpStatus`: The HTTP status code (for HTTP errors)
+- `body`: The response body (for HTTP errors)
+- `headers`: The response headers (for HTTP errors)

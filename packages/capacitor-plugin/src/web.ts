@@ -335,7 +335,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
 
     if (error instanceof Error) {
       return {
-        code: "OS-PLUG-FLTR-0011",
+        code: "OS-PLUG-FLTR-0012",
         message: error.message,
         source,
         target,
@@ -343,7 +343,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
     }
 
     return {
-      code: "OS-PLUG-FLTR-0011",
+      code: "OS-PLUG-FLTR-0012",
       message: "An unknown error occurred",
       source,
       target,
@@ -383,12 +383,11 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
    * Checks if the Capacitor Filesystem plugin is available
    */
   private isFilesystemAvailable(): boolean {
-    return (
-      typeof window !== "undefined" &&
-      window.Capacitor !== undefined &&
-      window.Capacitor.Plugins !== undefined &&
-      window.Capacitor.Plugins.Filesystem !== undefined
-    );
+    try {
+      return !!(globalThis as any)?.Capacitor?.Plugins?.Filesystem;
+    } catch (e) {
+      return false;
+    }
   }
 
   /**

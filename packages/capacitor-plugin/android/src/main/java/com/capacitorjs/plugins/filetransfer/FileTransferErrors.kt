@@ -78,8 +78,18 @@ object FileTransferErrors {
         message = "The server responded with HTTP 304 – Not Modified. If you want to avoid this, check your headers related to HTTP caching.",
         httpStatus = 304
     )
-    fun genericError(cause: Throwable) = ErrorInfo(
+    
+    fun httpError(responseCode: String, message: String, responseBody: String?, headers: Map<String, List<String>>?) = ErrorInfo(
         code = formatErrorCode(11),
+        message = "HTTP error: $responseCode - $message",
+        httpStatus = responseCode.toIntOrNull(),
+        body = responseBody,
+        headers = headers,
+        exception = message
+    )
+    
+    fun genericError(cause: Throwable) = ErrorInfo(
+        code = formatErrorCode(12),
         message = "The operation failed with an error - ${cause.localizedMessage}",
         exception = cause.localizedMessage
     )
@@ -100,14 +110,7 @@ fun Throwable.toFileTransferError(): FileTransferErrors.ErrorInfo = when (this) 
         if (responseCode == "304") {
             FileTransferErrors.notModified
         } else {
-            FileTransferErrors.ErrorInfo(
-                code = FileTransferErrors.formatErrorCode(11),
-                message = "HTTP error: $responseCode - $message",
-                httpStatus = responseCode.toIntOrNull(),
-                body = responseBody,
-                headers = headers,
-                exception = message
-            )
+            FileTransferErrors.httpError(responseCode, message, responseBody, headers)
         }
     }
     is IONFLTRException.ConnectionError -> FileTransferErrors.connectionError

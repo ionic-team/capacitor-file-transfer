@@ -2,7 +2,9 @@ package com.capacitorjs.plugins.filetransfer
 
 import android.Manifest
 import android.content.Context
+import android.media.MediaScannerConnection
 import android.os.Build
+import android.os.Environment
 import com.getcapacitor.JSObject
 import com.getcapacitor.PermissionState
 import com.getcapacitor.Plugin
@@ -38,6 +40,7 @@ class FileTransferPlugin : Plugin() {
     companion object {
         const val PUBLIC_STORAGE = "publicStorage"
         private const val PROGRESS_UPDATE_INTERVAL = 100L // 100ms between progress updates
+        private const val DEFAULT_TIMEOUT_MS = 60000 // Default timeout of 60 seconds
     }
 
     private val ioScope: CoroutineScope by lazy { CoroutineScope(Dispatchers.IO) }
@@ -58,7 +61,7 @@ class FileTransferPlugin : Plugin() {
     private fun JSObject.toMap(): Map<String, String> {
         val map = mutableMapOf<String, String>()
         keys().forEach { key ->
-            map[key] = getString(key) ?: ""
+            map[key] = getString(key).orEmpty()
         }
         return map
     }
@@ -66,20 +69,16 @@ class FileTransferPlugin : Plugin() {
     private fun JSObject.toParamsMap(): Map<String, Array<String>> {
         val map = mutableMapOf<String, Array<String>>()
         keys().forEach { key ->
-            val stringValue = getString(key)
-            if (stringValue != null) {
-                map[key] = arrayOf(stringValue)
-                return@forEach
-            }
-            
-            val arrayValue = getJSONArray(key)
-            if (arrayValue != null) {
-                val values = mutableListOf<String>()
-                for (i in 0 until arrayValue.length()) {
-                    arrayValue.optString(i)?.let { values.add(it) }
-                }
-                if (values.isNotEmpty()) {
-                    map[key] = values.toTypedArray()
+            when (val value = opt(key)) {
+                is String -> map[key] = arrayOf(value)
+                is org.json.JSONArray -> {
+                    val values = mutableListOf<String>()
+                    for (i in 0 until value.length()) {
+                        value.optString(i).takeIf { it.isNotEmpty() }?.let { values.add(it) }
+                    }
+                    if (values.isNotEmpty()) {
+                        map[key] = values.toTypedArray()
+                    }
                 }
             }
         }
@@ -126,8 +125,8 @@ class FileTransferPlugin : Plugin() {
             headers = headers.toMap(),
             params = params.toParamsMap(),
             shouldEncodeUrlParams = call.getBoolean("shouldEncodeUrlParams", true) ?: true,
-            readTimeout = call.getInt("readTimeout", 60000) ?: 60000,
-            connectTimeout = call.getInt("connectTimeout", 60000) ?: 60000,
+            readTimeout = call.getInt("readTimeout", DEFAULT_TIMEOUT_MS) ?: DEFAULT_TIMEOUT_MS,
+            connectTimeout = call.getInt("connectTimeout", DEFAULT_TIMEOUT_MS) ?: DEFAULT_TIMEOUT_MS,
             disableRedirects = call.getBoolean("disableRedirects", false) ?: false
         )
     }
@@ -176,6 +175,11 @@ class FileTransferPlugin : Plugin() {
                                 lengthComputable = true
                             )
                             notifyProgress("download", url, finalStatus, forceUpdate = true)
+                        }
+                        
+                        // Update MediaStore if the file is in a public directory
+                        if (isPublicDirectory(filePath)) {
+                            MediaScannerConnection.scanFile(context, arrayOf(filePath), null, null)
                         }
                         
                         val response = JSObject().apply {
@@ -293,14 +297,14 @@ class FileTransferPlugin : Plugin() {
      * @param error The ErrorInfo containing error details
      * @param customMessage Optional custom message to override the error's default message
      */
-    fun PluginCall.sendError(error: FileTransferErrors.ErrorInfo, customMessage: String? = null) {
+    private fun PluginCall.sendError(error: FileTransferErrors.ErrorInfo, customMessage: String? = null) {
         val errorObject = error.toJSObject()
         if (customMessage != null) {
             // Override the default message if a custom one is provided
             errorObject.put("message", customMessage)
-            this.reject(customMessage, errorObject)
+            this.reject(customMessage, error.code, errorObject)
         } else {
-            this.reject(error.message, errorObject)
+            this.reject(error.message, error.code, errorObject)
         }
     }
 
@@ -311,5 +315,27 @@ class FileTransferPlugin : Plugin() {
      */
     private fun isStoragePermissionGranted(): Boolean {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.R || getPermissionState(PUBLIC_STORAGE) == PermissionState.GRANTED
+    }
+
+    /**
+     * Checks if the file path is in a public directory (not in app-specific directories)
+     * @param filePath The file path to check
+     * @return Returns true if the file path is in a public directory
+     */
+    private fun isPublicDirectory(filePath: String): Boolean {
+        // Check if the path is in external storage
+        val externalStoragePath = Environment.getExternalStorageDirectory().absolutePath
+        
+        // Get package directory paths
+        val appPrivatePaths = listOf(
+            context.filesDir.absolutePath,
+            context.cacheDir.absolutePath,
+            context.getExternalFilesDir(null)?.absolutePath,
+            context.externalCacheDir?.absolutePath
+        )
+        
+        // Check if path is in external storage but not in app-specific directories
+        return filePath.startsWith(externalStoragePath) && 
+               appPrivatePaths.none { it != null && filePath.startsWith(it) }
     }
 }
