@@ -65,7 +65,7 @@ Perform an HTTP request to upload a file to a server
 ### addListener('progress', ...)
 
 ```typescript
-addListener(eventName: 'progress', listenerFunc: (progress: ProgressStatus) => void) => Promise<PluginListenerHandle>
+addListener(eventName: "progress", listenerFunc: (progress: ProgressStatus) => void) => Promise<PluginListenerHandle>
 ```
 
 Add a listener to file transfer (download or upload) progress events.
