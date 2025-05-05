@@ -1,6 +1,7 @@
 import { FileTransfer } from '@capacitor/file-transfer';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Capacitor } from '@capacitor/core';
+import { FileViewer } from '@capacitor/file-viewer';
 
 window.customElements.define(
   'file-transfer-app',
@@ -130,6 +131,7 @@ window.customElements.define(
               <div class="progress-text" id="downloadProgressText">0%</div>
             </div>
             <button id="downloadBtn">Download</button>
+            <button id="openFileBtn" style="margin-left: 10px; background: #4CAF50;">Open File</button>
           </div>
 
           <div class="card">
@@ -141,6 +143,15 @@ window.customElements.define(
                 <option value="https://httpbin.org/post">HTTPBin (Test File Upload)</option>
               </select>
               <input type="url" id="customUploadUrl" placeholder="Or enter custom URL">
+            </div>
+            <div class="form-group" id="uploadDirectoryContainer" style="display: none;">
+              <label for="uploadDirectory">Directory:</label>
+              <select id="uploadDirectory">
+                <option value="DOCUMENTS">Documents</option>
+                <option value="DATA">App Data</option>
+                <option value="CACHE">Cache</option>
+                <option value="EXTERNAL">External Storage</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="fileInput">File:</label>
@@ -202,6 +213,11 @@ window.customElements.define(
         const uploadProgress = this.shadowRoot.querySelector('#uploadProgress');
         const downloadProgressContainer = this.shadowRoot.querySelector('#downloadProgressContainer');
         const uploadProgressContainer = this.shadowRoot.querySelector('#uploadProgressContainer');
+        const uploadDirectoryContainer = this.shadowRoot.querySelector('#uploadDirectoryContainer');
+
+        if (Capacitor.getPlatform() !== 'web') {
+          uploadDirectoryContainer.style.display = 'block';
+        }
 
         downloadProgress.addEventListener('change', () => {
           downloadProgressContainer.style.display = downloadProgress.checked ? 'block' : 'none';
@@ -213,6 +229,7 @@ window.customElements.define(
 
         this.shadowRoot.querySelector('#downloadBtn').addEventListener('click', () => this.handleDownload());
         this.shadowRoot.querySelector('#uploadBtn').addEventListener('click', () => this.handleUpload());
+        this.shadowRoot.querySelector('#openFileBtn').addEventListener('click', () => this.handleOpenFile());
 
         // Set default paths
         const downloadPath = this.shadowRoot.querySelector('#downloadPath');
@@ -258,8 +275,8 @@ window.customElements.define(
       return customUrl || selectUrl;
     }
 
-    getSelectedDirectory() {
-      const directorySelect = this.shadowRoot.querySelector('#downloadDirectory');
+    getSelectedDirectory(isDownload = true) {
+      const directorySelect = this.shadowRoot.querySelector(isDownload ? '#downloadDirectory' : '#uploadDirectory');
       const selectedValue = directorySelect.value;
 
       if (selectedValue === 'DOCUMENTS') {
@@ -297,29 +314,11 @@ window.customElements.define(
           // For web, we'll use a simple path
           filePath = fileName;
         } else {
-          // For native platforms, get a proper path from the Filesystem plugin
-          try {
-            // We'll put the file in the test directory we created
-            const pathResult = await Filesystem.getUri({
-              path: 'file-transfer-test/' + fileName,
-              directory: selectedDirectory
-            });
-            filePath = pathResult.uri;
-            
-            // For Android, we might need to remove the file:// prefix
-            if (Capacitor.getPlatform() === 'android' && filePath.startsWith('file://')) {
-              filePath = filePath.substring(7);
-            }
-          } catch (error) {
-            // If getUri fails, use a reasonable default path
-            if (Capacitor.getPlatform() === 'android') {
-              filePath = '/storage/emulated/0/Download/' + fileName;
-            } else if (Capacitor.getPlatform() === 'ios') {
-              filePath = fileName; // iOS will handle this appropriately
-            } else {
-              filePath = fileName;
-            }
-          }
+          const pathResult = await Filesystem.getUri({
+            path: 'file-transfer-test/' + fileName,
+            directory: selectedDirectory
+          });
+          filePath = pathResult.uri;
         }
 
         // Download file
@@ -351,17 +350,70 @@ window.customElements.define(
         const uploadProgressContainer = this.shadowRoot.querySelector('#uploadProgressContainer');
         uploadProgressContainer.style.display = uploadProgress.checked ? 'block' : 'none';
 
+        let filePath;
+        
+        if (Capacitor.getPlatform() === 'web') {
+          filePath = file.name;
+        } else {
+          const selectedDirectory = this.getSelectedDirectory(false);
+          
+          // Get the file URI
+          const pathResult = await Filesystem.getUri({
+            path: 'file-transfer-test/' + file.name,
+            directory: selectedDirectory
+          });
+          
+          filePath = pathResult.uri;
+        }
+
         // Upload file
         const result = await FileTransfer.uploadFile({
           url,
-          path: `${Capacitor.getPlatform() === 'web' ? '' : '/storage/emulated/0/Download/'}` + file.name,
-          blob: file,
+          path: filePath,
+          blob: Capacitor.getPlatform() === 'web' ? file : undefined,
           progress: uploadProgress.checked,
         });
 
         this.showResponse('Upload completed', result);
       } catch (error) {
         this.showError('Upload failed: ' + error.message);
+      }
+    }
+
+    async handleOpenFile() {
+      if (Capacitor.getPlatform() === 'web') {
+        this.showError('File viewer is not available on web platforms');
+        return;
+      }
+
+      try {
+        const fileName = this.shadowRoot.querySelector('#downloadPath').value;
+        const selectedDirectory = this.getSelectedDirectory();
+        
+        if (!fileName) {
+          this.showError('Please specify a file name to open');
+          return;
+        }
+
+        let pathResult;
+        
+        try {
+          // Try to get the file path
+          pathResult = await Filesystem.getUri({
+            path: 'file-transfer-test/' + fileName,
+            directory: selectedDirectory
+          });
+          await FileViewer.openDocumentFromLocalPath({
+            path: pathResult.uri
+          });
+        } catch (error) {
+          this.showError('File not found. Please download it first.');
+          return;
+        }
+        
+        this.showResponse('File opened', { path: pathResult.uri });
+      } catch (error) {
+        this.showError('Failed to open file: ' + error.message);
       }
     }
 
