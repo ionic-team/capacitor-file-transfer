@@ -355,15 +355,35 @@ window.customElements.define(
         if (Capacitor.getPlatform() === 'web') {
           filePath = file.name;
         } else {
-          const selectedDirectory = this.getSelectedDirectory(false);
+          if (Capacitor.getPlatform() === 'android') {
+            const selectedDirectory = this.getSelectedDirectory(false);
+            
+            // Get the file URI
+            const pathResult = await Filesystem.getUri({
+              path: 'file-transfer-test/' + file.name,
+              directory: selectedDirectory
+            });
+            
+            filePath = pathResult.uri;
+          } else if (Capacitor.getPlatform() === 'ios') {
+            const base64 = await new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onload = () => {
+                const result = reader.result;
+                resolve(result.split(',')[1]);
+              };
+              reader.onerror = reject;
+              reader.readAsDataURL(file);
+            });
           
-          // Get the file URI
-          const pathResult = await Filesystem.getUri({
-            path: 'file-transfer-test/' + file.name,
-            directory: selectedDirectory
-          });
-          
-          filePath = pathResult.uri;
+            const savedFile = await Filesystem.writeFile({
+              path: file.name,
+              data: base64,
+              directory: Directory.Cache,
+            });
+
+            filePath = await savedFile.uri;
+          }
         }
 
         // Upload file
