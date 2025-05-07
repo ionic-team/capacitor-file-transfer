@@ -10,7 +10,7 @@ let package = Package(
             targets: ["FileTransferPlugin"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "7.0.0")
+        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", exact: "7.1.0")
     ],
     targets: [
         .binaryTarget(

@@ -1,0 +1,2496 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "IONFileTransferLib",
+    "printedName": "IONFileTransferLib",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IONFLTRException",
+        "printedName": "IONFLTRException",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "invalidPath",
+            "printedName": "invalidPath",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRException.Type) -> (Swift.String?) -> IONFileTransferLib.IONFLTRException",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String?) -> IONFileTransferLib.IONFLTRException",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(path: Swift.String?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRException.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO11invalidPathyACSSSg_tcACmF",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO11invalidPathyACSSSg_tcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emptyURL",
+            "printedName": "emptyURL",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRException.Type) -> (Swift.String?) -> IONFileTransferLib.IONFLTRException",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String?) -> IONFileTransferLib.IONFLTRException",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(url: Swift.String?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRException.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO8emptyURLyACSSSg_tcACmF",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO8emptyURLyACSSSg_tcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "invalidURL",
+            "printedName": "invalidURL",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRException.Type) -> (Swift.String) -> IONFileTransferLib.IONFLTRException",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> IONFileTransferLib.IONFLTRException",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(url: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRException.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO10invalidURLyACSS_tcACmF",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO10invalidURLyACSS_tcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fileDoesNotExist",
+            "printedName": "fileDoesNotExist",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRException.Type) -> ((any Swift.Error)?) -> IONFileTransferLib.IONFLTRException",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "((any Swift.Error)?) -> IONFileTransferLib.IONFLTRException",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(cause: (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRException.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO16fileDoesNotExistyACs5Error_pSg_tcACmF",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO16fileDoesNotExistyACs5Error_pSg_tcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cannotCreateDirectory",
+            "printedName": "cannotCreateDirectory",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRException.Type) -> (Swift.String, (any Swift.Error)?) -> IONFileTransferLib.IONFLTRException",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String, (any Swift.Error)?) -> IONFileTransferLib.IONFLTRException",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(path: Swift.String, cause: (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRException.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO21cannotCreateDirectoryyACSS_s5Error_pSgtcACmF",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO21cannotCreateDirectoryyACSS_s5Error_pSgtcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "httpError",
+            "printedName": "httpError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRException.Type) -> (Swift.Int, Swift.String?, [Swift.String : Swift.String]?) -> IONFileTransferLib.IONFLTRException",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Int, Swift.String?, [Swift.String : Swift.String]?) -> IONFileTransferLib.IONFLTRException",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(responseCode: Swift.Int, responseBody: Swift.String?, headers: [Swift.String : Swift.String]?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "[Swift.String : Swift.String]?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Dictionary",
+                                "printedName": "[Swift.String : Swift.String]",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  }
+                                ],
+                                "usr": "s:SD"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRException.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO9httpErroryACSi_SSSgSDyS2SGSgtcACmF",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO9httpErroryACSi_SSSgSDyS2SGSgtcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "connectionError",
+            "printedName": "connectionError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRException.Type) -> ((any Swift.Error)?) -> IONFileTransferLib.IONFLTRException",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "((any Swift.Error)?) -> IONFileTransferLib.IONFLTRException",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(cause: (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRException.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO15connectionErroryACs0F0_pSg_tcACmF",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO15connectionErroryACs0F0_pSg_tcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "transferError",
+            "printedName": "transferError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRException.Type) -> ((any Swift.Error)?) -> IONFileTransferLib.IONFLTRException",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "((any Swift.Error)?) -> IONFileTransferLib.IONFLTRException",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(cause: (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRException.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO13transferErroryACs0F0_pSg_tcACmF",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO13transferErroryACs0F0_pSg_tcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "unknownError",
+            "printedName": "unknownError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRException.Type) -> ((any Swift.Error)?) -> IONFileTransferLib.IONFLTRException",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "((any Swift.Error)?) -> IONFileTransferLib.IONFLTRException",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(cause: (any Swift.Error)?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRException.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRException",
+                        "printedName": "IONFileTransferLib.IONFLTRException",
+                        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO12unknownErroryACs0F0_pSg_tcACmF",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO12unknownErroryACs0F0_pSg_tcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO11descriptionSSvp",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO11descriptionSSvp",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib16IONFLTRExceptionO11descriptionSSvg",
+                "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO11descriptionSSvg",
+                "moduleName": "IONFileTransferLib",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRException",
+                "printedName": "IONFileTransferLib.IONFLTRException",
+                "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRException",
+                "printedName": "IONFileTransferLib.IONFLTRException",
+                "usr": "s:18IONFileTransferLib16IONFLTRExceptionO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18IONFileTransferLib16IONFLTRExceptionO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO2eeoiySbAC_ACtFZ",
+            "moduleName": "IONFileTransferLib",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:18IONFileTransferLib16IONFLTRExceptionO",
+        "mangledName": "$s18IONFileTransferLib16IONFLTRExceptionO",
+        "moduleName": "IONFileTransferLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IONFLTRManager",
+        "printedName": "IONFLTRManager",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRManager",
+                "printedName": "IONFileTransferLib.IONFLTRManager",
+                "usr": "c:@M@IONFileTransferLib@objc(cs)IONFLTRManager"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@IONFileTransferLib@objc(cs)IONFLTRManager(im)init",
+            "mangledName": "$s18IONFileTransferLib14IONFLTRManagerCACycfc",
+            "moduleName": "IONFileTransferLib",
+            "overriding": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "downloadFile",
+            "printedName": "downloadFile(fromServerURL:toFileURL:withHttpOptions:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRPublisher",
+                "printedName": "IONFileTransferLib.IONFLTRPublisher",
+                "usr": "s:18IONFileTransferLib16IONFLTRPublisherC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRHttpOptions",
+                "printedName": "IONFileTransferLib.IONFLTRHttpOptions",
+                "usr": "s:18IONFileTransferLib18IONFLTRHttpOptionsV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18IONFileTransferLib14IONFLTRManagerC12downloadFile13fromServerURL02tofI015withHttpOptionsAA16IONFLTRPublisherC10Foundation0I0V_AlA011IONFLTRHttpM0VtKF",
+            "mangledName": "$s18IONFileTransferLib14IONFLTRManagerC12downloadFile13fromServerURL02tofI015withHttpOptionsAA16IONFLTRPublisherC10Foundation0I0V_AlA011IONFLTRHttpM0VtKF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "uploadFile",
+            "printedName": "uploadFile(fromFileURL:toServerURL:withUploadOptions:andHttpOptions:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRPublisher",
+                "printedName": "IONFileTransferLib.IONFLTRPublisher",
+                "usr": "s:18IONFileTransferLib16IONFLTRPublisherC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRUploadOptions",
+                "printedName": "IONFileTransferLib.IONFLTRUploadOptions",
+                "usr": "s:18IONFileTransferLib20IONFLTRUploadOptionsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRHttpOptions",
+                "printedName": "IONFileTransferLib.IONFLTRHttpOptions",
+                "usr": "s:18IONFileTransferLib18IONFLTRHttpOptionsV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18IONFileTransferLib14IONFLTRManagerC10uploadFile04fromF3URL08toServerH017withUploadOptions07andHttpM0AA16IONFLTRPublisherC10Foundation0H0V_AmA013IONFLTRUploadM0VAA011IONFLTRHttpM0VtKF",
+            "mangledName": "$s18IONFileTransferLib14IONFLTRManagerC10uploadFile04fromF3URL08toServerH017withUploadOptions07andHttpM0AA16IONFLTRPublisherC10Foundation0H0V_AmA013IONFLTRUploadM0VAA011IONFLTRHttpM0VtKF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@IONFileTransferLib@objc(cs)IONFLTRManager",
+        "mangledName": "$s18IONFileTransferLib14IONFLTRManagerC",
+        "moduleName": "IONFileTransferLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IONFLTRPublisher",
+        "printedName": "IONFLTRPublisher",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "receive",
+            "printedName": "receive(subscriber:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18IONFileTransferLib16IONFLTRPublisherC7receive10subscriberyx_t7Combine10SubscriberRzs5Error_p7FailureRtzAA21IONFLTRTransferResultO5InputRtzlF",
+            "mangledName": "$s18IONFileTransferLib16IONFLTRPublisherC7receive10subscriberyx_t7Combine10SubscriberRzs5Error_p7FailureRtzAA21IONFLTRTransferResultO5InputRtzlF",
+            "moduleName": "IONFileTransferLib",
+            "genericSig": "<τ_0_0 where τ_0_0 : Combine.Subscriber, τ_0_0.Failure == any Swift.Error, τ_0_0.Input == IONFileTransferLib.IONFLTRTransferResult>",
+            "sugared_genericSig": "<S where S : Combine.Subscriber, S.Failure == any Swift.Error, S.Input == IONFileTransferLib.IONFLTRTransferResult>",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:18IONFileTransferLib16IONFLTRPublisherC",
+        "mangledName": "$s18IONFileTransferLib16IONFLTRPublisherC",
+        "moduleName": "IONFileTransferLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Publisher",
+            "printedName": "Publisher",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Output",
+                "printedName": "Output",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IONFLTRTransferResult",
+                    "printedName": "IONFileTransferLib.IONFLTRTransferResult",
+                    "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Failure",
+                "printedName": "Failure",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7Combine9PublisherP",
+            "mangledName": "$s7Combine9PublisherP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IONFLTRHttpOptions",
+        "printedName": "IONFLTRHttpOptions",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(method:params:headers:timeout:disableRedirects:shouldEncodeUrlParams:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRHttpOptions",
+                "printedName": "IONFileTransferLib.IONFLTRHttpOptions",
+                "usr": "s:18IONFileTransferLib18IONFLTRHttpOptionsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : [Swift.String]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18IONFileTransferLib18IONFLTRHttpOptionsV6method6params7headers7timeout16disableRedirects21shouldEncodeUrlParamsACSS_SDySSSaySSGGSDyS2SGSiS2btcfc",
+            "mangledName": "$s18IONFileTransferLib18IONFLTRHttpOptionsV6method6params7headers7timeout16disableRedirects21shouldEncodeUrlParamsACSS_SDySSSaySSGGSDyS2SGSiS2btcfc",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:18IONFileTransferLib18IONFLTRHttpOptionsV",
+        "mangledName": "$s18IONFileTransferLib18IONFLTRHttpOptionsV",
+        "moduleName": "IONFileTransferLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IONFLTRTransferResult",
+        "printedName": "IONFLTRTransferResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "ongoing",
+            "printedName": "ongoing",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRTransferResult.Type) -> (IONFileTransferLib.IONFLTRProgressStatus) -> IONFileTransferLib.IONFLTRTransferResult",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(IONFileTransferLib.IONFLTRProgressStatus) -> IONFileTransferLib.IONFLTRTransferResult",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRTransferResult",
+                        "printedName": "IONFileTransferLib.IONFLTRTransferResult",
+                        "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(status: IONFileTransferLib.IONFLTRProgressStatus)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "IONFLTRProgressStatus",
+                            "printedName": "IONFileTransferLib.IONFLTRProgressStatus",
+                            "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRTransferResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRTransferResult",
+                        "printedName": "IONFileTransferLib.IONFLTRTransferResult",
+                        "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO7ongoingyAcA21IONFLTRProgressStatusV_tcACmF",
+            "mangledName": "$s18IONFileTransferLib21IONFLTRTransferResultO7ongoingyAcA21IONFLTRProgressStatusV_tcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "complete",
+            "printedName": "complete",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IONFileTransferLib.IONFLTRTransferResult.Type) -> (IONFileTransferLib.IONFLTRTransferComplete) -> IONFileTransferLib.IONFLTRTransferResult",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(IONFileTransferLib.IONFLTRTransferComplete) -> IONFileTransferLib.IONFLTRTransferResult",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRTransferResult",
+                        "printedName": "IONFileTransferLib.IONFLTRTransferResult",
+                        "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(data: IONFileTransferLib.IONFLTRTransferComplete)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "IONFLTRTransferComplete",
+                            "printedName": "IONFileTransferLib.IONFLTRTransferComplete",
+                            "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IONFileTransferLib.IONFLTRTransferResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IONFLTRTransferResult",
+                        "printedName": "IONFileTransferLib.IONFLTRTransferResult",
+                        "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO8completeyAcA0D8CompleteV_tcACmF",
+            "mangledName": "$s18IONFileTransferLib21IONFLTRTransferResultO8completeyAcA0D8CompleteV_tcACmF",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRTransferResult",
+                "printedName": "IONFileTransferLib.IONFLTRTransferResult",
+                "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRTransferResult",
+                "printedName": "IONFileTransferLib.IONFLTRTransferResult",
+                "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s18IONFileTransferLib21IONFLTRTransferResultO2eeoiySbAC_ACtFZ",
+            "moduleName": "IONFileTransferLib",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:18IONFileTransferLib21IONFLTRTransferResultO",
+        "mangledName": "$s18IONFileTransferLib21IONFLTRTransferResultO",
+        "moduleName": "IONFileTransferLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IONFLTRProgressStatus",
+        "printedName": "IONFLTRProgressStatus",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "bytes",
+            "printedName": "bytes",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV5bytesSivp",
+            "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV5bytesSivp",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV5bytesSivg",
+                "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV5bytesSivg",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV5bytesSivs",
+                "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV5bytesSivs",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV5bytesSivM",
+                "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV5bytesSivM",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "contentLength",
+            "printedName": "contentLength",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV13contentLengthSivp",
+            "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV13contentLengthSivp",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV13contentLengthSivg",
+                "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV13contentLengthSivg",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV13contentLengthSivs",
+                "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV13contentLengthSivs",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV13contentLengthSivM",
+                "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV13contentLengthSivM",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "lengthComputable",
+            "printedName": "lengthComputable",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV16lengthComputableSbvp",
+            "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV16lengthComputableSbvp",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV16lengthComputableSbvg",
+                "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV16lengthComputableSbvg",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV16lengthComputableSbvs",
+                "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV16lengthComputableSbvs",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV16lengthComputableSbvM",
+                "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV16lengthComputableSbvM",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRProgressStatus",
+                "printedName": "IONFileTransferLib.IONFLTRProgressStatus",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRProgressStatus",
+                "printedName": "IONFileTransferLib.IONFLTRProgressStatus",
+                "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV2eeoiySbAC_ACtFZ",
+            "moduleName": "IONFileTransferLib",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:18IONFileTransferLib21IONFLTRProgressStatusV",
+        "mangledName": "$s18IONFileTransferLib21IONFLTRProgressStatusV",
+        "moduleName": "IONFileTransferLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IONFLTRTransferComplete",
+        "printedName": "IONFLTRTransferComplete",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "totalBytes",
+            "printedName": "totalBytes",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV10totalBytesSivp",
+            "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV10totalBytesSivp",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV10totalBytesSivg",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV10totalBytesSivg",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV10totalBytesSivs",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV10totalBytesSivs",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV10totalBytesSivM",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV10totalBytesSivM",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "responseCode",
+            "printedName": "responseCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV12responseCodeSivp",
+            "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV12responseCodeSivp",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV12responseCodeSivg",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV12responseCodeSivg",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV12responseCodeSivs",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV12responseCodeSivs",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV12responseCodeSivM",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV12responseCodeSivM",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "responseBody",
+            "printedName": "responseBody",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV12responseBodySSSgvp",
+            "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV12responseBodySSSgvp",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV12responseBodySSSgvg",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV12responseBodySSSgvg",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV12responseBodySSSgvs",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV12responseBodySSSgvs",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV12responseBodySSSgvM",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV12responseBodySSSgvM",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "headers",
+            "printedName": "headers",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV7headersSDyS2SGvp",
+            "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV7headersSDyS2SGvp",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV7headersSDyS2SGvg",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV7headersSDyS2SGvg",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV7headersSDyS2SGvs",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV7headersSDyS2SGvs",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV7headersSDyS2SGvM",
+                "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV7headersSDyS2SGvM",
+                "moduleName": "IONFileTransferLib",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRTransferComplete",
+                "printedName": "IONFileTransferLib.IONFLTRTransferComplete",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRTransferComplete",
+                "printedName": "IONFileTransferLib.IONFLTRTransferComplete",
+                "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV2eeoiySbAC_ACtFZ",
+            "moduleName": "IONFileTransferLib",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:18IONFileTransferLib23IONFLTRTransferCompleteV",
+        "mangledName": "$s18IONFileTransferLib23IONFLTRTransferCompleteV",
+        "moduleName": "IONFileTransferLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "Import",
+        "name": "UniformTypeIdentifiers",
+        "printedName": "UniformTypeIdentifiers",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IONFileTransferLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IONFLTRUploadOptions",
+        "printedName": "IONFLTRUploadOptions",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(chunkedMode:mimeType:fileKey:formParams:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IONFLTRUploadOptions",
+                "printedName": "IONFileTransferLib.IONFLTRUploadOptions",
+                "usr": "s:18IONFileTransferLib20IONFLTRUploadOptionsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18IONFileTransferLib20IONFLTRUploadOptionsV11chunkedMode8mimeType7fileKey10formParamsACSb_SSSgSSSDyS2SGSgtcfc",
+            "mangledName": "$s18IONFileTransferLib20IONFLTRUploadOptionsV11chunkedMode8mimeType7fileKey10formParamsACSb_SSSgSSSDyS2SGSgtcfc",
+            "moduleName": "IONFileTransferLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:18IONFileTransferLib20IONFLTRUploadOptionsV",
+        "mangledName": "$s18IONFileTransferLib20IONFLTRUploadOptionsV",
+        "moduleName": "IONFileTransferLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRUploadDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 539,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRDownloadDelegate.swift",
+      "kind": "IntegerLiteral",
+      "offset": 635,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRDownloadDelegate.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1096,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
+      "kind": "Dictionary",
+      "offset": 1165,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
+      "kind": "Dictionary",
+      "offset": 1201,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1229,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1266,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1311,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRTransferResult.swift",
+      "kind": "Dictionary",
+      "offset": 2038,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRBaseDelegate.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1189,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRUploadOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 891,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRUploadOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 957,
+      "length": 6,
+      "value": "\"file\""
+    }
+  ]
+}
