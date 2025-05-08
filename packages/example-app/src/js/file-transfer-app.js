@@ -144,15 +144,6 @@ window.customElements.define(
               </select>
               <input type="url" id="customUploadUrl" placeholder="Or enter custom URL">
             </div>
-            <div class="form-group" id="uploadDirectoryContainer" style="display: none;">
-              <label for="uploadDirectory">Directory:</label>
-              <select id="uploadDirectory">
-                <option value="DOCUMENTS">Documents</option>
-                <option value="DATA">App Data</option>
-                <option value="CACHE">Cache</option>
-                <option value="EXTERNAL">External Storage</option>
-              </select>
-            </div>
             <div class="form-group">
               <label for="fileInput">File:</label>
               <input type="file" id="fileInput">
@@ -213,11 +204,6 @@ window.customElements.define(
         const uploadProgress = this.shadowRoot.querySelector('#uploadProgress');
         const downloadProgressContainer = this.shadowRoot.querySelector('#downloadProgressContainer');
         const uploadProgressContainer = this.shadowRoot.querySelector('#uploadProgressContainer');
-        const uploadDirectoryContainer = this.shadowRoot.querySelector('#uploadDirectoryContainer');
-
-        if (Capacitor.getPlatform() !== 'web') {
-          uploadDirectoryContainer.style.display = 'block';
-        }
 
         downloadProgress.addEventListener('change', () => {
           downloadProgressContainer.style.display = downloadProgress.checked ? 'block' : 'none';
@@ -275,8 +261,8 @@ window.customElements.define(
       return customUrl || selectUrl;
     }
 
-    getSelectedDirectory(isDownload = true) {
-      const directorySelect = this.shadowRoot.querySelector(isDownload ? '#downloadDirectory' : '#uploadDirectory');
+    getSelectedDirectory() {
+      const directorySelect = this.shadowRoot.querySelector('#downloadDirectory');
       const selectedValue = directorySelect.value;
 
       if (selectedValue === 'DOCUMENTS') {
@@ -355,17 +341,6 @@ window.customElements.define(
         if (Capacitor.getPlatform() === 'web') {
           filePath = file.name;
         } else {
-          if (Capacitor.getPlatform() === 'android') {
-            const selectedDirectory = this.getSelectedDirectory(false);
-            
-            // Get the file URI
-            const pathResult = await Filesystem.getUri({
-              path: 'file-transfer-test/' + file.name,
-              directory: selectedDirectory
-            });
-            
-            filePath = pathResult.uri;
-          } else if (Capacitor.getPlatform() === 'ios') {
             const base64 = await new Promise((resolve, reject) => {
               const reader = new FileReader();
               reader.onload = () => {
@@ -383,7 +358,6 @@ window.customElements.define(
             });
 
             filePath = await savedFile.uri;
-          }
         }
 
         // Upload file
