@@ -326,7 +326,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
   ): FileTransferError {
     if (error instanceof TypeError && error.message === "Failed to fetch") {
       return {
-        code: "OS-PLUG-FLTR-0009",
+        code: "OS-PLUG-FLTR-0008",
         message: "Failed to connect to server",
         source,
         target,
@@ -335,7 +335,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
 
     if (error instanceof Error) {
       return {
-        code: "OS-PLUG-FLTR-0012",
+        code: "OS-PLUG-FLTR-0011",
         message: error.message,
         source,
         target,
@@ -343,7 +343,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
     }
 
     return {
-      code: "OS-PLUG-FLTR-0012",
+      code: "OS-PLUG-FLTR-0011",
       message: "An unknown error occurred",
       source,
       target,
