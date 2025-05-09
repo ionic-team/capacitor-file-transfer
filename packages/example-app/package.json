@@ -1,0 +1,29 @@
+{
+  "name": "capacitor-file-transfer-example-app",
+  "version": "1.0.0",
+  "description": "Capacitor File Transfer Example App",
+  "type": "module",
+  "keywords": [
+    "capacitor",
+    "mobile"
+  ],
+  "scripts": {
+    "start": "vite",
+    "build": "vite build && npx cap sync",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/file-transfer": "file:../capacitor-plugin",
+    "@capacitor/file-viewer": "^1.0.0",
+    "@capacitor/filesystem": "^7.0.1",
+    "@capacitor/ios": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest",
+    "vite": "^5.4.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

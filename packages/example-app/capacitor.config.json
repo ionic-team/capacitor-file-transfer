@@ -1,0 +1,10 @@
+{
+  "appId": "com.capacitorjs.exampleapp.plugins.filetransfer",
+  "appName": "CAP-FLTR Sample",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}
