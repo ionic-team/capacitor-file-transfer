@@ -2409,84 +2409,84 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRUploadDelegate.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRUploadDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 539,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRDownloadDelegate.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRDownloadDelegate.swift",
       "kind": "IntegerLiteral",
       "offset": 635,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRDownloadDelegate.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRDownloadDelegate.swift",
       "kind": "BooleanLiteral",
       "offset": 1096,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
       "kind": "Dictionary",
       "offset": 1165,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
       "kind": "Dictionary",
       "offset": 1201,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
       "kind": "IntegerLiteral",
       "offset": 1229,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
       "kind": "BooleanLiteral",
       "offset": 1266,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRHttpOptions.swift",
       "kind": "BooleanLiteral",
       "offset": 1311,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRTransferResult.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRTransferResult.swift",
       "kind": "Dictionary",
       "offset": 2038,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRBaseDelegate.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/Delegates\/IONFLTRBaseDelegate.swift",
       "kind": "BooleanLiteral",
       "offset": 1189,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRUploadOptions.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRUploadOptions.swift",
       "kind": "BooleanLiteral",
       "offset": 891,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andre.destro\/workspace\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRUploadOptions.swift",
+      "filePath": "\/Users\/pedrobilro\/Desktop\/client_projects\/outsystems\/source_codes\/cordova_plugins_ios\/ion-ios-filetransfer\/IONFileTransferLib\/IONFLTRUploadOptions.swift",
       "kind": "StringLiteral",
       "offset": 957,
       "length": 6,
