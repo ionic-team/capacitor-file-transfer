@@ -40,17 +40,17 @@ jobs:
         working-directory: ./packages/capacitor-plugin
         run: npm run build
       - name: 'Install example app dependencies'
-        working-directory: ./packages/example-app-capacitor
+        working-directory: ./packages/example-app
         run: npm i
       - name: 'Build Web example app'
-        working-directory: ./packages/example-app-capacitor
+        working-directory: ./packages/example-app
         run: npm run build
       - name: 'Sync example app native platforms'
-        working-directory: ./packages/example-app-capacitor
+        working-directory: ./packages/example-app
         run: npx cap sync
       - name: 'Build Android example app'
-        working-directory: ./packages/example-app-capacitor/android
+        working-directory: ./packages/example-app/android
         run: ./gradlew clean assembleDebug
       - name: 'Build iOS example app'
-        working-directory: ./packages/example-app-capacitor/ios/App
+        working-directory: ./packages/example-app/ios/App
         run: xcodebuild clean build -workspace App.xcworkspace -scheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
