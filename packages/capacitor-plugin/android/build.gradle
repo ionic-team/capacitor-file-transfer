@@ -59,7 +59,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
     implementation project(':capacitor-android')
      // TODO replace with 1.0.0 once an official release of the native library is done
-    implementation "io.ionic.libs:ionfiletransfer-android:0.0.1-dev-3"
+    implementation "io.ionic.libs:ionfiletransfer-android:0.0.1-dev-4"
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
 
     testImplementation "junit:junit:$junitVersion"
