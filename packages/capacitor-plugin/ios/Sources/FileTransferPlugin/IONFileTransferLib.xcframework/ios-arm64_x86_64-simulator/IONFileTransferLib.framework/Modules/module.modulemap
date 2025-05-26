@@ -1,4 +1,0 @@
-framework module IONFileTransferLib {
-  header "IONFileTransferLib-Swift.h"
-  requires objc
-}

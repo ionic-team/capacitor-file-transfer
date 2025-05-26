@@ -12,9 +12,7 @@ Pod::Spec.new do |s|
   s.source = { :git => package['repository']['url'], :tag => s.version.to_s }
   s.source_files = 'ios/Sources/FileTransferPlugin/*.{swift,h,m,c,cc,mm,cpp}'
   s.ios.deployment_target = '14.0'
-  #s.dependency 'FileTransferLib', spec='~> 1.0'
-  # temporary xcframeowrk dependency - TODO update to official pod (commented line above) once published
-  s.vendored_frameworks = 'ios/Sources/*/IONFileTransferLib.xcframework'
+  s.dependency 'IONFileTransferLib', spec='~> 1.0'
   s.dependency 'Capacitor'
   s.swift_version = '5.1'
 end

@@ -15,9 +15,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "IONFileTransferLib",
-            // url: "https://github.com/ionic-team/ion-ios-filetransfer/releases/download/1.0.0/IONFileTransferLib.zip",
-            // checksum: "<compute_checksum>" // sha-256
-            path: "./ios/Sources/FileTransferPlugin/IONFileTransferLib.xcframework"
+            url: "https://github.com/ionic-team/ion-ios-filetransfer/releases/download/1.0.0/IONFileTransferLib.zip",
+            checksum: "59f5bbf1c7dfe5c5f872ad4d10a0bd0b8e57bd21cf18ff8ac68e9c4a65ec3c1e" // sha-256
         ),
         .target(
             name: "FileTransferPlugin",
