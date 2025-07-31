@@ -25,6 +25,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import androidx.core.net.toUri
 
 @CapacitorPlugin(
     name = "FileTransfer",
@@ -323,9 +324,12 @@ class FileTransferPlugin : Plugin() {
      * @return Returns true if the file path is in a public directory
      */
     private fun isPublicDirectory(filePath: String): Boolean {
+        // Normalize to path if it is a uri path
+        val normalizedPath = filePath.toUri().path ?: filePath
+
         // Check if the path is in external storage
         val externalStoragePath = Environment.getExternalStorageDirectory().absolutePath
-        
+
         // Get package directory paths
         val appPrivatePaths = listOf(
             context.filesDir.absolutePath,
@@ -333,9 +337,9 @@ class FileTransferPlugin : Plugin() {
             context.getExternalFilesDir(null)?.absolutePath,
             context.externalCacheDir?.absolutePath
         )
-        
+
         // Check if path is in external storage but not in app-specific directories
-        return filePath.startsWith(externalStoragePath) && 
-               appPrivatePaths.none { it != null && filePath.startsWith(it) }
+        return normalizedPath.startsWith(externalStoragePath) &&
+               appPrivatePaths.none { it != null && normalizedPath.startsWith(it) }
     }
 }
