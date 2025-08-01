@@ -336,30 +336,7 @@ window.customElements.define(
         const uploadProgressContainer = this.shadowRoot.querySelector('#uploadProgressContainer');
         uploadProgressContainer.style.display = uploadProgress.checked ? 'block' : 'none';
 
-        let filePath;
-        
-        if (Capacitor.getPlatform() === 'web') {
-          filePath = file.name;
-        } else {
-            const base64 = await new Promise((resolve, reject) => {
-              const reader = new FileReader();
-              reader.onload = () => {
-                const result = reader.result;
-                resolve(result.split(',')[1]);
-              };
-              reader.onerror = reject;
-              reader.readAsDataURL(file);
-            });
-          
-            const savedFile = await Filesystem.writeFile({
-              path: file.name,
-              data: base64,
-              directory: Directory.Cache,
-            });
-
-            filePath = await savedFile.uri;
-        }
-
+        let filePath = file.name;
         // Upload file
         const result = await FileTransfer.uploadFile({
           url,
