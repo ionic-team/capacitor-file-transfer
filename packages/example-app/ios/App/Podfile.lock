@@ -2,16 +2,18 @@ PODS:
   - Capacitor (7.0.0):
     - CapacitorCordova
   - CapacitorCordova (7.0.0)
-  - CapacitorFilesystem (7.0.1):
+  - CapacitorFilesystem (7.1.3):
     - Capacitor
-  - CapacitorFileTransfer (0.0.1):
+    - IONFilesystemLib (~> 1.0)
+  - CapacitorFileTransfer (1.0.2):
     - Capacitor
     - IONFileTransferLib (~> 1.0)
-  - CapacitorFileViewer (1.0.0):
+  - CapacitorFileViewer (1.0.2):
     - Capacitor
-    - IONFileViewerLib (~> 1.0)
+    - IONFileViewerLib (~> 1.0.1)
+  - IONFilesystemLib (1.0.1)
   - IONFileTransferLib (1.0.0)
-  - IONFileViewerLib (1.0.0)
+  - IONFileViewerLib (1.0.1)
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
@@ -22,6 +24,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - IONFilesystemLib
     - IONFileTransferLib
     - IONFileViewerLib
 
@@ -40,11 +43,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Capacitor: fcbee427ff437f414bbb3bc2d39364ad9bd2b8a5
   CapacitorCordova: 345f93b7edd121db98e4ec20ac94d6d7bcaf7e48
-  CapacitorFilesystem: 307f97c27a265edf8396a1c9c235592fd8572fe3
-  CapacitorFileTransfer: 3838f28c664326bbecf9d6e91f39242740bc1714
-  CapacitorFileViewer: 55c4cb7be2d8c6e1e2707913daca864e94641b13
+  CapacitorFilesystem: 8e48bb1a036caf0d01605eb4bfe74b880cca8f80
+  CapacitorFileTransfer: 491faa027f38270a6ce10ef27b40804cb2dfe330
+  CapacitorFileViewer: 4f6fcd47151b904e2d7cf57ebd7dd3739c10da9e
+  IONFilesystemLib: 89258b8e3e85465da93127d25d7ce37f977e8a6f
   IONFileTransferLib: 06c85b3f8dd9d46f39e2172213f45d810708c61e
-  IONFileViewerLib: 54e9fae36a354623a10fc91928500037432a9122
+  IONFileViewerLib: 9e6b09451afa7705545d4d20e2974b4f1555390c
 
 PODFILE CHECKSUM: 76668ea156e59ff21841d22849461df8faf9b06b
 

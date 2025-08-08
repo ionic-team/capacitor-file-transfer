@@ -1,4 +1,4 @@
-package com.example.plugin;
+package com.capacitorjs.exampleapp.plugins.filetransfer;
 
 import com.getcapacitor.BridgeActivity;
 
