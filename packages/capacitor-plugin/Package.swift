@@ -7,7 +7,8 @@ let package = Package(
     products: [
         .library(
             name: "CapacitorFileTransfer",
-            targets: ["FileTransferPlugin"])
+            targets: ["FileTransferPlugin"]
+        )
     ],
     dependencies: [
         .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "7.0.0")
@@ -15,8 +16,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "IONFileTransferLib",
-            url: "https://github.com/ionic-team/ion-ios-filetransfer/releases/download/1.0.0/IONFileTransferLib.zip",
-            checksum: "59f5bbf1c7dfe5c5f872ad4d10a0bd0b8e57bd21cf18ff8ac68e9c4a65ec3c1e" // sha-256
+            url: "https://github.com/ionic-team/ion-ios-filetransfer/releases/download/1.0.1/IONFileTransferLib.zip",
+            checksum: "0a239f814fa3746f68850246855d974c9795f60342897413212b2b46690f70d5" // sha-256
         ),
         .target(
             name: "FileTransferPlugin",
