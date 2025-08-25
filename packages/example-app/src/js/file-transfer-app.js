@@ -336,7 +336,31 @@ window.customElements.define(
         const uploadProgressContainer = this.shadowRoot.querySelector('#uploadProgressContainer');
         uploadProgressContainer.style.display = uploadProgress.checked ? 'block' : 'none';
 
-        let filePath = file.name;
+        let filePath;
+
+        if (Capacitor.getPlatform() === 'web') {
+          filePath = file.name;
+        } else {
+            // on native we can't get the file path from `file` object, so we temporarily save the file so that it may be uploaded.
+            const base64 = await new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onload = () => {
+                const result = reader.result;
+                resolve(result.split(',')[1]);
+              };
+              reader.onerror = reject;
+              reader.readAsDataURL(file);
+            });
+
+            const savedFile = await Filesystem.writeFile({
+              path: file.name,
+              data: base64,
+              directory: Directory.Temporary,
+            });
+
+            filePath = await savedFile.uri;
+        }
+        
         // Upload file
         const result = await FileTransfer.uploadFile({
           url,
