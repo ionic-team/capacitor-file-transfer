@@ -13,9 +13,12 @@ This repository contains minimal code for native Android and iOS. The implementa
 
 ### Local Setup
 
-1. Fork and clone the repo, uncheking the clone `main` branch only option.
-2. If you plan to create a new feature or fix a bug, checkout `development` branch (in general Pull Requests should be open for that branch).
-3. Install the dependencies.
+1. Fork and clone the repo.
+2. Go inside the plugin folder
+   ```shell
+   cd packages/capacitor-plugin
+   ```
+3. Install the dependencies to use the plugin.
 
    ```shell
    npm install
@@ -55,7 +58,7 @@ Commits and PR's should use the [conventional-commits](https://www.conventionalc
 
 ## Publishing
 
-Publishing is automated based on the branch committed to. When a commit or merge is made to a branch a release that corresponds with the branch will be created:
+Publishing is automated based on the branch committed to. When a commit or merge is made to a branch a release that corresponds with the branch will be created (main requires manual trigger):
 
 | Branch Name | Build Type                    | NPM Tag | Example NPM Version                |
 | ----------- | ----------------------------- | ------- | ---------------------------------- |
@@ -63,9 +66,6 @@ Publishing is automated based on the branch committed to. When a commit or merge
 | next        | next (these are betas/alphas) | next    | @capacitor/file-transfer@1.0.0-next.1 |
 | main        | latest                        | latest  | @capacitor/file-transfer@1.0.0        |
 
-- Dev work should be done by creating and merging PR's into the `development` branch until a feature set is complete enough to form a release.
-- When a feature set is complete enough to form a release, merge the `development` branch into the `next` branch where it becomes a beta/alpha tagged under `next` for testing teams to use before full release. In case a PR is opened from `development` to `next`, avoid squashing the commits, to keep the history.
-- Upon completed testing the `next` branch is merged into `main` for a full release to be made. In case a PR is opened from `next` to `main`, avoid squashing the commits, to keep the history.
-- The `main` branch should then be merged into `dev` and `next` to keep them up to date with the latest code base.
+- In general new developments will go straight to `main`. If we want to have non-stable versions (e.g. for new Capacitor versions or when there are many changes), we may use `next` or `development` branch, and then once they are ready for stable version, open a PR to main (should be rebased to keep history).
 
 > **Note**: The [`files`](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files) array in `package.json` specifies which files get published. If you rename files/directories or add files elsewhere, you may need to update it.
