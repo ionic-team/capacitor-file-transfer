@@ -3,10 +3,10 @@ include ':capacitor-android'
 project(':capacitor-android').projectDir = new File('../node_modules/@capacitor/android/capacitor')
 
 include ':capacitor-file-transfer'
-project(':capacitor-file-transfer').projectDir = new File('../node_modules/@capacitor/file-transfer/android')
+project(':capacitor-file-transfer').projectDir = new File('../../capacitor-plugin/android')
 
 include ':capacitor-file-viewer'
-project(':capacitor-file-viewer').projectDir = new File('../node_modules/@capacitor/file-viewer/android')
+project(':capacitor-file-viewer').projectDir = new File('../../../../capacitor-file-viewer/packages/capacitor-plugin/android')
 
 include ':capacitor-filesystem'
-project(':capacitor-filesystem').projectDir = new File('../node_modules/@capacitor/filesystem/android')
+project(':capacitor-filesystem').projectDir = new File('../../../../capacitor-plugins/filesystem/android')
