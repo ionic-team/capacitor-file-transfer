@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.4...v1.0.5) (2025-08-29)
+
+
+### Bug Fixes
+
+* **ios:** notify of upload progress ([#20](https://github.com/ionic-team/capacitor-file-transfer/issues/20)) ([9ae0712](https://github.com/ionic-team/capacitor-file-transfer/commit/9ae0712f065e91415385545e071dcbc4449258d0))
+
 ## [1.0.4](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.3...v1.0.4) (2025-08-22)
 
 
