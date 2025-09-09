@@ -13,12 +13,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@capacitor/android": "^7.0.0",
-    "@capacitor/core": "^7.0.0",
+    "@capacitor/android": "next",
+    "@capacitor/core": "next",
     "@capacitor/file-transfer": "file:../capacitor-plugin",
-    "@capacitor/file-viewer": "^1.0.2",
-    "@capacitor/filesystem": "^7.1.3",
-    "@capacitor/ios": "^7.0.0"
+    "@capacitor/file-viewer": "next",
+    "@capacitor/filesystem": "next",
+    "@capacitor/ios": "next"
   },
   "devDependencies": {
     "@capacitor/cli": "latest",
