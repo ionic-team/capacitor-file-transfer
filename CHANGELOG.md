@@ -1,3 +1,15 @@
+# [2.0.0-next.1](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.5...v2.0.0-next.1) (2025-09-09)
+
+
+### Features
+
+* Capacitor 8 support ([ab2fa1b](https://github.com/ionic-team/capacitor-file-transfer/commit/ab2fa1bf1712ba784296e62a9722e02b6e48cd30))
+
+
+### BREAKING CHANGES
+
+* Capacitor major version update requires major version update on the plugin.
+
 ## [1.0.5](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.4...v1.0.5) (2025-08-29)
 
 
