@@ -102,6 +102,11 @@ export interface UploadFileOptions extends HttpOptions {
   /**
    * Whether to upload data in a chunked streaming mode.
    * Not supported on web.
+   *
+   * Note: The upload uses `Content-Type: multipart/form-data`, when `chunkedMode` is `true`.
+   * Depending on your backend server, this can cause the upload to fail.
+   * If your server expects a raw stream (e.g. `application/octet-stream`), you must explicitly set the `Content-Type` header in `headers`.
+   *
    * @since 1.0.0
    */
   chunkedMode?: boolean;
