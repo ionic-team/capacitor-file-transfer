@@ -1,4 +1,9 @@
-import { HttpOptions, HttpParams, HttpHeaders, PluginListenerHandle } from "@capacitor/core";
+import {
+  HttpOptions,
+  HttpParams,
+  HttpHeaders,
+  PluginListenerHandle,
+} from "@capacitor/core";
 
 export interface DownloadFileOptions extends HttpOptions {
   /**
@@ -130,7 +135,7 @@ export interface UploadFileOptions extends HttpOptions {
    * @since 1.0.0
    */
   progress?: boolean;
-    /**
+  /**
    * The Http Request method to run. (Default is POST)
    * @since 1.0.0
    */
