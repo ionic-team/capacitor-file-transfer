@@ -8,6 +8,7 @@ export interface DownloadFileOptions extends HttpOptions {
   url: string;
   /**
    * The full file path the downloaded file should be moved to.
+   * You may use a plugin like `@capacitor/filesystem` to get a complete file path.
    * @since 1.0.0
    */
   path: string;
@@ -88,6 +89,7 @@ export interface UploadFileOptions extends HttpOptions {
   url: string;
   /**
    * Full file path of the file to upload.
+   * You may use a plugin like `@capacitor/filesystem` to get a complete file path.
    * @since 1.0.0
    */
   path: string;
