@@ -76,7 +76,7 @@ try {
         path: fileInfo.uri,
         chunkedMode: true,
         headers: {
-            // Upload uses multipart form upload by default.
+            // Upload uses `multipart/form-data` by default.
             // If you want to avoid that, you can set the 'Content-Type' header explicitly.
             'Content-Type': 'application/octet-stream',
         },
