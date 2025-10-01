@@ -21,6 +21,10 @@ npx cap sync
 
 </docgen-index>
 
+Note: Some of the input options come from `HttpOptions` in `@capacitor/core`, but the plugin does not use all parameters from `HttpOptions`. The ones that are used are documented below.
+
+For list of existing error codes, see [Errors](#errors).
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
