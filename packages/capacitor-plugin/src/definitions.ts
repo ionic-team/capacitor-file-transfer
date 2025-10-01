@@ -1,6 +1,11 @@
-import { HttpOptions, PluginListenerHandle } from "@capacitor/core";
+import { HttpOptions, HttpParams, HttpHeaders, PluginListenerHandle } from "@capacitor/core";
 
 export interface DownloadFileOptions extends HttpOptions {
+  /**
+   * The URL to download the file from.
+   * @since 1.0.0
+   */
+  url: string;
   /**
    * The full file path the downloaded file should be moved to.
    * @since 1.0.0
@@ -10,9 +15,55 @@ export interface DownloadFileOptions extends HttpOptions {
    * If true, progress event will be dispatched on every chunk received.
    * See addListener() for more information.
    * Chunks are throttled to every 100ms on Android/iOS to avoid slowdowns.
+   * Default is `false`.
    * @since 1.0.0
    */
   progress?: boolean;
+  /**
+   * The Http Request method to run. (Default is GET)
+   * @since 1.0.0
+   */
+  method?: string;
+  /**
+   * URL parameters to append to the request.
+   * This `HttpParams` interface comes from `@capacitor/core`.
+   * @since 1.0.0
+   */
+  params?: HttpParams;
+  /**
+   * Http Request headers to send with the request.
+   * This `HttpHeaders` interface comes from `@capacitor/core`.
+   * @since 1.0.0
+   */
+  headers?: HttpHeaders;
+  /**
+   * How long to wait to read additional data in milliseconds.
+   * Resets each time new data is received.
+   * Default is 60,000 milliseconds (1 minute).
+   * Not supported on web.
+   * @since 1.0.0
+   */
+  readTimeout?: number;
+  /**
+   * How long to wait for the initial connection in milliseconds.
+   * Default is 60,000 milliseconds (1 minute).
+   * In iOS, there's no real distinction between `connectTimeout`and `readTimeout`.
+   * Plugin tries to use `connectTimeout`, if not uses `readTimeout`, if not uses default
+   * @since 1.0.0
+   */
+  connectTimeout?: number;
+  /**
+   * Sets whether automatic HTTP redirects should be disabled
+   * @since 1.0.0
+   */
+  disableRedirects?: boolean;
+  /**
+   * Use this option if you need to keep the URL unencoded in certain cases
+   * (already encoded, azure/firebase testing, etc.). The default is `true`.
+   * Not supported on web.
+   * @since 1.0.0
+   */
+  shouldEncodeUrlParams?: boolean;
 }
 
 export interface DownloadFileResult {
@@ -30,6 +81,11 @@ export interface DownloadFileResult {
 }
 
 export interface UploadFileOptions extends HttpOptions {
+  /**
+   * The URL to upload the file to.
+   * @since 1.0.0
+   */
+  url: string;
   /**
    * Full file path of the file to upload.
    * @since 1.0.0
@@ -63,9 +119,57 @@ export interface UploadFileOptions extends HttpOptions {
    * If true, progress event will be dispatched on every chunk received.
    * See addListener() for more information.
    * Chunks are throttled to every 100ms on Android/iOS to avoid slowdowns.
+   * Default is `false`.
    * @since 1.0.0
    */
   progress?: boolean;
+    /**
+   * The Http Request method to run. (Default is POST)
+   * @since 1.0.0
+   */
+  method?: string;
+  /**
+   * URL parameters to append to the request.
+   * This `HttpParams` interface comes from `@capacitor/core`.
+   * @since 1.0.0
+   */
+  params?: HttpParams;
+  /**
+   * Http Request headers to send with the request.
+   * This `HttpHeaders` interface comes from `@capacitor/core`.
+   * @since 1.0.0
+   */
+  headers?: HttpHeaders;
+  /**
+   * How long to wait to read additional data in milliseconds.
+   * Resets each time new data is received.
+   * Default is 60,000 milliseconds (1 minute).
+   * Not supported on web.
+   * @since 1.0.0
+   */
+  readTimeout?: number;
+  /**
+   * How long to wait for the initial connection in milliseconds.
+   * Default is 60,000 milliseconds (1 minute).
+   * Not supported on web.
+   * In iOS, there's no real distinction between `connectTimeout`and `readTimeout`.
+   * Plugin tries to use `connectTimeout`, if not uses `readTimeout`, if not uses default
+   * @since 1.0.0
+   */
+  connectTimeout?: number;
+  /**
+   * Sets whether automatic HTTP redirects should be disabled.
+   * Not supported on web.
+   * @since 1.0.0
+   */
+  disableRedirects?: boolean;
+  /**
+   * Use this option if you need to keep the URL unencoded in certain cases
+   * (already encoded, azure/firebase testing, etc.). The default is `true`.
+   * Not supported on web.
+   * @since 1.0.0
+   */
+  shouldEncodeUrlParams?: boolean;
 }
 
 export interface UploadFileResult {
