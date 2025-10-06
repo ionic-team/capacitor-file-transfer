@@ -1,3 +1,10 @@
+# [2.0.0-next.2](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.0-next.1...v2.0.0-next.2) (2025-10-06)
+
+
+### Bug Fixes
+
+* **ios:** Simplify SPM usage for native library ([#28](https://github.com/ionic-team/capacitor-file-transfer/issues/28)) ([0b2f319](https://github.com/ionic-team/capacitor-file-transfer/commit/0b2f319427d5565f5e08dfe98059859297a3418d))
+
 ## [1.0.6](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.5...v1.0.6) (2025-10-06)
 
 
