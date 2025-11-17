@@ -21,7 +21,7 @@
     "@capacitor/ios": "next"
   },
   "devDependencies": {
-    "@capacitor/cli": "latest",
+    "@capacitor/cli": "next",
     "vite": "^5.4.2"
   },
   "author": "",

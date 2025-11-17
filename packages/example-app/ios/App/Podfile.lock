@@ -1,0 +1,55 @@
+PODS:
+  - Capacitor (8.0.0-beta.0):
+    - CapacitorCordova
+  - CapacitorCordova (8.0.0-beta.0)
+  - CapacitorFilesystem (7.1.4):
+    - Capacitor
+    - IONFilesystemLib (~> 1.0.1)
+  - CapacitorFileTransfer (1.0.6):
+    - Capacitor
+    - IONFileTransferLib (~> 1.0.1)
+  - CapacitorFileViewer (1.0.5):
+    - Capacitor
+    - IONFileViewerLib (~> 1.0.3)
+  - IONFilesystemLib (1.0.1)
+  - IONFileTransferLib (1.0.1)
+  - IONFileViewerLib (1.0.3)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorFilesystem (from `../../node_modules/@capacitor/filesystem`)"
+  - CapacitorFileTransfer (from `../../../capacitor-plugin`)
+  - "CapacitorFileViewer (from `../../node_modules/@capacitor/file-viewer`)"
+
+SPEC REPOS:
+  trunk:
+    - IONFilesystemLib
+    - IONFileTransferLib
+    - IONFileViewerLib
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorFilesystem:
+    :path: "../../node_modules/@capacitor/filesystem"
+  CapacitorFileTransfer:
+    :path: "../../../capacitor-plugin"
+  CapacitorFileViewer:
+    :path: "../../node_modules/@capacitor/file-viewer"
+
+SPEC CHECKSUMS:
+  Capacitor: cdbe01d8f7b542b2750fb51e88051e764b3cbc4e
+  CapacitorCordova: 65a0b71358d76bdeb799f45cd0214d68fbe2fd56
+  CapacitorFilesystem: ac0a386949ed6c295a3dffa129ecd26b881ae5be
+  CapacitorFileTransfer: bb608aa5f14d6f75fa38307b6b51ab5f171560b3
+  CapacitorFileViewer: f2dad52ce1c61ab1e05f5e3886c2b1396e18dd5f
+  IONFilesystemLib: 89258b8e3e85465da93127d25d7ce37f977e8a6f
+  IONFileTransferLib: b268561ab0ba7f386eea228c4986b55ba0146ca9
+  IONFileViewerLib: 574758ebcaa4b1543669b1c9708f1970e1172b29
+
+PODFILE CHECKSUM: 2553c1d66fe947be6ac7a8274b64bf6676a70afd
+
+COCOAPODS: 1.16.2
