@@ -1,3 +1,10 @@
+# [2.0.0-next.4](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.0-next.3...v2.0.0-next.4) (2025-11-17)
+
+* **android:** Update gradle dependencies to latest versions
+* **ios:** Minor updates to Package.swift
+
+
+
 # [2.0.0-next.3](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.0-next.2...v2.0.0-next.3) (2025-11-10)
 
 
