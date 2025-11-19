@@ -5,7 +5,7 @@ PODS:
   - CapacitorFilesystem (7.1.3):
     - Capacitor
     - IONFilesystemLib (~> 1.0)
-  - CapacitorFileTransfer (1.0.4):
+  - CapacitorFileTransfer (1.0.6):
     - Capacitor
     - IONFileTransferLib (~> 1.0.1)
   - CapacitorFileViewer (1.0.2):
@@ -41,11 +41,11 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/file-viewer"
 
 SPEC CHECKSUMS:
-  Capacitor: fcbee427ff437f414bbb3bc2d39364ad9bd2b8a5
+  Capacitor: 82d1f3b4480d66b5996814f74500dcbc0908558c
   CapacitorCordova: 345f93b7edd121db98e4ec20ac94d6d7bcaf7e48
-  CapacitorFilesystem: 8e48bb1a036caf0d01605eb4bfe74b880cca8f80
-  CapacitorFileTransfer: 776bdbc7d71a490a79c81ea97bf25f069c632106
-  CapacitorFileViewer: 4f6fcd47151b904e2d7cf57ebd7dd3739c10da9e
+  CapacitorFilesystem: 0329ace667c6b971410cab3619dfb98a39cc3b86
+  CapacitorFileTransfer: 591bdf4cbb809fbdaf85aba6ddfa93ff1c4c1b2d
+  CapacitorFileViewer: 47cf03d7cb5a313cbc1209baa83da2edc6f650be
   IONFilesystemLib: 89258b8e3e85465da93127d25d7ce37f977e8a6f
   IONFileTransferLib: b268561ab0ba7f386eea228c4986b55ba0146ca9
   IONFileViewerLib: 9e6b09451afa7705545d4d20e2974b4f1555390c

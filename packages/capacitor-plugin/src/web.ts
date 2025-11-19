@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import { WebPlugin } from "@capacitor/core";
 import type {
   FileTransferPlugin,
@@ -385,7 +386,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
   private isFilesystemAvailable(): boolean {
     try {
       return !!(globalThis as any)?.Capacitor?.Plugins?.Filesystem;
-    } catch (e) {
+    } catch {
       return false;
     }
   }
