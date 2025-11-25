@@ -1,9 +1,42 @@
+# [2.0.0-next.4](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.0-next.3...v2.0.0-next.4) (2025-11-17)
+
+* **android:** Update gradle dependencies to latest versions
+* **ios:** Minor updates to Package.swift
+
+
+
+# [2.0.0-next.3](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.0-next.2...v2.0.0-next.3) (2025-11-10)
+
+
+### Bug Fixes
+
+* **android:** use 'propName = value' assignment syntax in build.gradle files ([4a2f8d4](https://github.com/ionic-team/capacitor-file-transfer/commit/4a2f8d445c96b198d0c73e277ca46a94ed175890))
+
+# [2.0.0-next.2](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.0-next.1...v2.0.0-next.2) (2025-10-06)
+
+
+### Bug Fixes
+
+* **ios:** Simplify SPM usage for native library ([#28](https://github.com/ionic-team/capacitor-file-transfer/issues/28)) ([0b2f319](https://github.com/ionic-team/capacitor-file-transfer/commit/0b2f319427d5565f5e08dfe98059859297a3418d))
+
 ## [1.0.6](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.5...v1.0.6) (2025-10-06)
 
 
 ### Bug Fixes
 
 * **ios:** Simplify SPM usage for native library ([#28](https://github.com/ionic-team/capacitor-file-transfer/issues/28)) ([0b2f319](https://github.com/ionic-team/capacitor-file-transfer/commit/0b2f319427d5565f5e08dfe98059859297a3418d))
+
+# [2.0.0-next.1](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.5...v2.0.0-next.1) (2025-09-09)
+
+
+### Features
+
+* Capacitor 8 support ([ab2fa1b](https://github.com/ionic-team/capacitor-file-transfer/commit/ab2fa1bf1712ba784296e62a9722e02b6e48cd30))
+
+
+### BREAKING CHANGES
+
+* Capacitor major version update requires major version update on the plugin.
 
 ## [1.0.5](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.4...v1.0.5) (2025-08-29)
 
