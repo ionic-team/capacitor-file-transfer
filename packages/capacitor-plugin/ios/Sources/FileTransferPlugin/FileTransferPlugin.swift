@@ -31,33 +31,33 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
     /// - Parameter call: The Capacitor call containing `url`, `path`, and optional HTTP options.
     @objc func downloadFile(_ call: CAPPluginCall) {
         do {
-            let (serverURL, fileURL, shouldTrackProgress, httpOptions) = try validateAndPrepare(call: call, action: .download)
+            let prepData = try validateAndPrepare(call: call, action: .download)
 
             try manager.downloadFile(
-                fromServerURL: serverURL,
-                toFileURL: fileURL,
-                withHttpOptions: httpOptions
+                fromServerURL: prepData.serverURL,
+                toFileURL: prepData.fileURL,
+                withHttpOptions: prepData.httpOptions
             ).sink(
-                receiveCompletion: handleCompletion(call: call, source: serverURL.absoluteString, target: fileURL.absoluteString),
+                receiveCompletion: handleCompletion(call: call, source: prepData.serverURL.absoluteString, target: prepData.fileURL.absoluteString),
                 receiveValue: handleReceiveValue(
                     call: call,
                     type: .download,
-                    url: serverURL.absoluteString,
-                    path: fileURL.path,
-                    shouldTrackProgress: shouldTrackProgress
+                    url: prepData.serverURL.absoluteString,
+                    path: prepData.fileURL.path,
+                    shouldTrackProgress: prepData.shouldTrackProgress
                 )
             ).store(in: &cancellables)
         } catch {
             call.sendError(error, source: call.getString("url"), target: call.getString("path"))
         }
     }
-    
+
     /// Uploads a file from the provided path to the specified server URL.
     ///
     /// - Parameter call: The Capacitor call containing `url`, `path`, `fileKey`, and optional HTTP options.
     @objc func uploadFile(_ call: CAPPluginCall) {
         do {
-            let (serverURL, fileURL, shouldTrackProgress, httpOptions) = try validateAndPrepare(call: call, action: .upload)
+            let prepData = try validateAndPrepare(call: call, action: .upload)
             let chunkedMode = call.getBool("chunkedMode", false)
             let mimeType = call.getString("mimeType")
             let fileKey = call.getString("fileKey") ?? "file"
@@ -66,47 +66,55 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
                 mimeType: mimeType,
                 fileKey: fileKey
             )
-            
+
             try manager.uploadFile(
-                fromFileURL: fileURL,
-                toServerURL: serverURL,
+                fromFileURL: prepData.fileURL,
+                toServerURL: prepData.serverURL,
                 withUploadOptions: uploadOptions,
-                andHttpOptions: httpOptions
+                andHttpOptions: prepData.httpOptions
             ).sink(
-                receiveCompletion: handleCompletion(call: call, source: fileURL.absoluteString, target: serverURL.absoluteString),
+                receiveCompletion: handleCompletion(call: call, source: prepData.fileURL.absoluteString, target: prepData.serverURL.absoluteString),
                 receiveValue: handleReceiveValue(
                     call: call,
                     type: .upload,
-                    url: serverURL.absoluteString,
-                    path: fileURL.path,
-                    shouldTrackProgress: shouldTrackProgress
+                    url: prepData.serverURL.absoluteString,
+                    path: prepData.fileURL.path,
+                    shouldTrackProgress: prepData.shouldTrackProgress
                 )
             ).store(in: &cancellables)
         } catch {
             call.sendError(error, source: call.getString("path"), target: call.getString("url"))
         }
     }
-    
+
+    /// Structure to hold transfer preparation data.
+    private struct TransferPreparationData {
+        let serverURL: URL
+        let fileURL: URL
+        let shouldTrackProgress: Bool
+        let httpOptions: IONFLTRHttpOptions
+    }
+
     /// Validates parameters from the call and prepares transfer-related data.
     ///
     /// - Parameters:
     ///   - call: The plugin call.
     ///   - action: The type of action (`upload` or `download`).
     /// - Throws: An error if validation fails.
-    /// - Returns: Tuple containing server URL, file URL, progress flag, and HTTP options.
-    private func validateAndPrepare(call: CAPPluginCall, action: Action) throws -> (URL, URL, Bool, IONFLTRHttpOptions) {
+    /// - Returns: Structure containing server URL, file URL, progress flag, and HTTP options.
+    private func validateAndPrepare(call: CAPPluginCall, action: Action) throws -> TransferPreparationData {
         guard let url = call.getString("url") else {
             throw FileTransferError.invalidServerUrl(nil)
         }
-        
+
         guard let serverURL = URL(string: url) else {
             throw FileTransferError.invalidServerUrl(url)
         }
-        
+
         guard let path = call.getString("path") else {
             throw FileTransferError.invalidParameters("Path is required.")
         }
-        
+
         guard let fileURL = URL(string: path) else {
             throw FileTransferError.invalidParameters("Path is invalid.")
         }
@@ -114,7 +122,7 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
         let shouldTrackProgress = call.getBool("progress", false)
         let headers = call.getObject("headers") ?? JSObject()
         let params = call.getObject("params") ?? JSObject()
-        
+
         let httpOptions = IONFLTRHttpOptions(
             method: call.getString("method") ?? defaultHTTPMethod(for: action),
             params: extractParams(from: params),
@@ -123,10 +131,15 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
             disableRedirects: call.getBool("disableRedirects", false),
             shouldEncodeUrlParams: call.getBool("shouldEncodeUrlParams", true)
         )
-        
-        return (serverURL, fileURL, shouldTrackProgress, httpOptions)
+
+        return TransferPreparationData(
+            serverURL: serverURL,
+            fileURL: fileURL,
+            shouldTrackProgress: shouldTrackProgress,
+            httpOptions: httpOptions
+        )
     }
-    
+
     /// Provides the default HTTP method for the given action.
     private func defaultHTTPMethod(for action: Action) -> String {
         switch action {
@@ -136,7 +149,7 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
             return "POST"
         }
     }
-    
+
     /// Converts a JSObject to a string dictionary used for headers.
     private func extractHeaders(from jsObject: JSObject) -> [String: String] {
         return jsObject.reduce(into: [String: String]()) { result, pair in
@@ -161,7 +174,7 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
         }
         return result
     }
-    
+
     /// Handles completion of the upload or download Combine pipeline.
     private func handleCompletion(call: CAPPluginCall, source: String, target: String) -> (Subscribers.Completion<Error>) -> Void {
         return { completion in
@@ -228,7 +241,7 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
             }
         }
     }
-    
+
     /// Reports a progress event to JavaScript listeners if conditions are met.
     ///
     /// This method emits a `"progress"` event with details about the transfer status, including
@@ -274,12 +287,12 @@ extension CAPPluginCall {
     func sendError(_ error: Error, source: String?, target: String?) {
         var pluginError: FileTransferError
         switch error {
-            case let error as FileTransferError:
-                pluginError = error
-            case let error as IONFLTRException:
-                pluginError = error.toFileTransferError()
-            default:
-                pluginError = .genericError(cause: error)
+        case let error as FileTransferError:
+            pluginError = error
+        case let error as IONFLTRException:
+            pluginError = error.toFileTransferError()
+        default:
+            pluginError = .genericError(cause: error)
         }
         pluginError.source = source
         pluginError.target = target
