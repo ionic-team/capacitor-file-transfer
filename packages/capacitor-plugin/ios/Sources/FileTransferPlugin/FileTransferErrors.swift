@@ -7,13 +7,13 @@ import IONFileTransferLib
 /// `FileTransferError` represents various error states that can occur during file uploads and downloads,
 /// including validation issues, connection problems, HTTP response errors, and file system errors.
 struct FileTransferError: Error {
-    
+
     /// A  error code in the format `OS-PLUG-FLTR-XXXX`.
     let code: String
-    
+
     /// A human-readable error message.
     let message: String
-    
+
     /// The source URL or path related to the error, if available.
     var source: String?
 
@@ -62,7 +62,7 @@ struct FileTransferError: Error {
         self.headers = headers
         self.cause = cause
     }
-    
+
     /// A dictionary representation of the error for use in JavaScript or other serialization contexts.
     ///
     /// This includes the code, message, and optional metadata such as HTTP status,
@@ -89,11 +89,11 @@ struct FileTransferError: Error {
 // MARK: - Static Constructors
 
 extension FileTransferError {
-    
+
     static func invalidParameters(_ message: String? = nil) -> FileTransferError {
         .init(code: 4, message: message ?? "The method's input parameters aren't valid.")
     }
-    
+
     static func invalidServerUrl(_ url: String?) -> FileTransferError {
         .init(
             code: 5,
@@ -103,7 +103,7 @@ extension FileTransferError {
             source: url
         )
     }
-    
+
     static func fileDoesNotExist() -> FileTransferError {
         .init(code: 7, message: "Operation failed because file does not exist.")
     }
@@ -111,7 +111,7 @@ extension FileTransferError {
     static func connectionError() -> FileTransferError {
         .init(code: 8, message: "Failed to connect to server.")
     }
-    
+
     static func notModified() -> FileTransferError {
         .init(
             code: 9,
@@ -119,7 +119,7 @@ extension FileTransferError {
             httpStatus: 304
         )
     }
-    
+
     static func httpError(
         responseCode: Int,
         message: String,
@@ -136,7 +136,7 @@ extension FileTransferError {
             cause: cause
         )
     }
-    
+
     static func genericError(
         cause: Error? = nil
     ) -> FileTransferError {
@@ -151,7 +151,7 @@ extension FileTransferError {
 // MARK: - IONFLTRException Mapping
 
 extension IONFLTRException {
-    
+
     /// Converts an `IONFLTRException` to a corresponding `FileTransferError`.
     ///
     /// This method maps specific cases of `IONFLTRException` to their
@@ -173,14 +173,14 @@ extension IONFLTRException {
             return FileTransferError.genericError(cause: self)
         case .httpError(let responseCode, let responseBody, let headers):
             return responseCode == 304
-            ? FileTransferError.notModified()
-            : FileTransferError.httpError(
-                responseCode: responseCode,
-                message: self.description,
-                responseBody: responseBody,
-                headers: headers,
-                cause: self
-            )
+                ? FileTransferError.notModified()
+                : FileTransferError.httpError(
+                    responseCode: responseCode,
+                    message: self.description,
+                    responseBody: responseBody,
+                    headers: headers,
+                    cause: self
+                )
         case .connectionError:
             return FileTransferError.connectionError()
         case .transferError:
