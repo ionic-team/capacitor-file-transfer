@@ -16,7 +16,7 @@
     "@capacitor/android": "^8.0.0",
     "@capacitor/core": "^8.0.0",
     "@capacitor/file-transfer": "file:../capacitor-plugin",
-    "@capacitor/file-viewer": "^7.0.0 || ^8.0.0",
+    "@capacitor/file-viewer": "^1.0.0 || ^2.0.0",
     "@capacitor/filesystem": "^7.0.0 || ^8.0.0",
     "@capacitor/ios": "^8.0.0"
   },
