@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.6...v1.0.7) (2025-12-16)
+
+
+### Bug Fixes
+
+* Use latest-7 for 1.x docs ([#44](https://github.com/ionic-team/capacitor-file-transfer/issues/44)) ([6822561](https://github.com/ionic-team/capacitor-file-transfer/commit/682256121ff7748d5c129f6c034693becae48a17))
+
 ## [1.0.6](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.5...v1.0.6) (2025-10-06)
 
 
