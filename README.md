@@ -22,7 +22,7 @@
 ## Install
 
 ```bash
-npm install @capacitor/file-transfer
+npm install @capacitor/file-transfer@latest-7
 npx cap sync
 ```
 
