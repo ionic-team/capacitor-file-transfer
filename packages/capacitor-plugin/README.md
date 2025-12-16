@@ -5,7 +5,7 @@ The FileTransfer API provides mechanisms for downloading and uploading files.
 ## Install
 
 ```bash
-npm install @capacitor/file-transfer
+npm install @capacitor/file-transfer@latest-7
 npx cap sync
 ```
 
