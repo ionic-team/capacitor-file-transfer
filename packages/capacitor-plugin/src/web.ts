@@ -18,7 +18,6 @@ interface FilesystemPlugin {
     data: string;
     recursive?: boolean;
   }): Promise<void>;
-  mkdir(options: { path: string; recursive?: boolean }): Promise<void>;
 }
 
 // Extend Window interface to include Capacitor
@@ -464,16 +463,6 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
       const base64Data = await this.blobToBase64(blob);
       if (!base64Data) {
         throw new Error("Failed to convert blob to base64");
-      }
-
-      // Create any parent directories needed
-      const pathParts = path.split("/");
-      if (pathParts.length > 1) {
-        const directory = pathParts.slice(0, -1).join("/");
-        await filesystem.mkdir({
-          path: directory,
-          recursive: true,
-        });
       }
 
       // Write the file
