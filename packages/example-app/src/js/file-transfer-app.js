@@ -371,7 +371,7 @@ window.customElements.define(
 
         this.showResponse('Upload completed', result);
       } catch (error) {
-        this.showError('Upload failed: ' + error.message);
+        this.showError('Upload failed: ' + JSON.stringify(error, null, 2));
       }
     }
 
