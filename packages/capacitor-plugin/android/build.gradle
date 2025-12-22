@@ -58,7 +58,7 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
     implementation project(':capacitor-android')
-    implementation "io.ionic.libs:ionfiletransfer-android:1.0.1"
+    implementation "io.ionic.libs:ionfiletransfer-android:1.0.2"
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
 
     testImplementation "junit:junit:$junitVersion"
