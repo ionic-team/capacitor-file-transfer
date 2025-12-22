@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.7...v1.0.8) (2025-12-22)
+
+
+### Bug Fixes
+
+* **android:** correct upload response by removing gzip encoding ([#45](https://github.com/ionic-team/capacitor-file-transfer/issues/45)) ([12b9631](https://github.com/ionic-team/capacitor-file-transfer/commit/12b9631850483760b8321a12afdcd48e63d3e179))
+
 ## [1.0.7](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.6...v1.0.7) (2025-12-16)
 
 
