@@ -5,6 +5,7 @@ import android.content.Context
 import android.media.MediaScannerConnection
 import android.os.Build
 import android.os.Environment
+import androidx.core.net.toUri
 import com.getcapacitor.JSObject
 import com.getcapacitor.PermissionState
 import com.getcapacitor.Plugin
@@ -25,7 +26,6 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import androidx.core.net.toUri
 
 @CapacitorPlugin(
     name = "FileTransfer",
@@ -252,12 +252,18 @@ class FileTransferPlugin : Plugin() {
                             )
                             notifyProgress("upload", url, finalStatus, forceUpdate = true)
                         }
-                        
+
+                        val headersObj = JSObject()
+                        result.data.headers?.entries?.forEach { (key, values) ->
+                            key?.let { headerKey ->
+                                headersObj.put(headerKey, values.firstOrNull() ?: "")
+                            }
+                        }
                         val response = JSObject().apply {
                             put("bytesSent", result.data.totalBytes)
                             put("responseCode", result.data.responseCode)
                             put("response", result.data.responseBody)
-                            put("headers", result.data.headers)
+                            put("headers", headersObj)
                         }
                         call.resolve(response)
                     }
