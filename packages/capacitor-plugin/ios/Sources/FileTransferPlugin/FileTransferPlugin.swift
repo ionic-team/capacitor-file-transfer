@@ -229,7 +229,7 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
                     case .upload:
                         return [
                             "bytesSent": data.totalBytes,
-                            "responseCode": data.responseCode,
+                            "responseCode": "\(data.responseCode)",
                             "response": data.responseBody ?? "",
                             "headers": data.headers.reduce(into: JSObject()) { result, entry in
                                 result[entry.key] = entry.value
