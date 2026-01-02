@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.1...v2.0.2) (2026-01-02)
+
+
+### Bug Fixes
+
+* **android:** Correctly returning headers for upload ([#46](https://github.com/ionic-team/capacitor-file-transfer/issues/46)) ([1242b3b](https://github.com/ionic-team/capacitor-file-transfer/commit/1242b3b1bb4c5342f7dcb8a69db04a2a994ca321))
+* **ios:** Send upload response code as string instead of number ([#49](https://github.com/ionic-team/capacitor-file-transfer/issues/49)) ([4c63c2a](https://github.com/ionic-team/capacitor-file-transfer/commit/4c63c2a58e992e15fae7d2b6b0726600042ef2b5))
+
 ## [2.0.1](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.0...v2.0.1) (2025-12-22)
 
 
