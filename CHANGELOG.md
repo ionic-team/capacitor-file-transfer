@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.2...v2.0.3) (2026-01-14)
+
+
+### Bug Fixes
+
+* **android:** Upload with params ([#51](https://github.com/ionic-team/capacitor-file-transfer/issues/51)) ([035e71c](https://github.com/ionic-team/capacitor-file-transfer/commit/035e71cf1abec9a06d4fe03d478299b233400080))
+
 ## [2.0.2](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.1...v2.0.2) (2026-01-02)
 
 
