@@ -1,6 +1,6 @@
 {
   "name": "@capacitor/file-transfer",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "The FileTransfer API provides mechanisms for downloading and uploading files.",
   "main": "./dist/plugin.cjs",
   "module": "./dist/plugin.mjs",
