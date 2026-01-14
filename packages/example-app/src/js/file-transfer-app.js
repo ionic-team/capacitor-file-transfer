@@ -150,6 +150,12 @@ window.customElements.define(
             </div>
             <div class="form-group">
               <label>
+                <input type="checkbox" id="chunkedMode">
+                Chunked Mode
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
                 <input type="checkbox" id="uploadProgress" checked>
                 Show Progress
               </label>
@@ -333,6 +339,7 @@ window.customElements.define(
         // Reset progress
         this.updateUploadProgress(0);
         const uploadProgress = this.shadowRoot.querySelector('#uploadProgress');
+        const chunkedMode = this.shadowRoot.querySelector('#chunkedMode').checked;
         const uploadProgressContainer = this.shadowRoot.querySelector('#uploadProgressContainer');
         uploadProgressContainer.style.display = uploadProgress.checked ? 'block' : 'none';
 
@@ -367,6 +374,10 @@ window.customElements.define(
           path: filePath,
           blob: Capacitor.getPlatform() === 'web' ? file : undefined,
           progress: uploadProgress.checked,
+          chunkedMode: chunkedMode,
+          params: {
+            'random': file.name
+          }
         });
 
         this.showResponse('Upload completed', result);
