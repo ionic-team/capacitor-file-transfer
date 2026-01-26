@@ -129,7 +129,7 @@ extension FileTransferError {
     ) -> FileTransferError {
         .init(
             code: 10,
-            message: "HTTP error: \(responseCode) - \(message)",
+            message: message,
             httpStatus: responseCode,
             body: responseBody,
             headers: headers,
