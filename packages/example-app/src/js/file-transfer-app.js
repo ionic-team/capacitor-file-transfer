@@ -102,6 +102,7 @@ window.customElements.define(
                 <option value="">Select a file to download</option>
                 <option value="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/examples/learning/helloworld.pdf">Small PDF (~1KB)</option>
                 <option value="https://raw.githubusercontent.com/kyokidG/large-pdf-viewer-poc/58a3df6adc4fe9bd5f02d2f583d6747e187d93ae/public/test2.pdf">Large PDF (~20MB)</option>
+                <option value="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/examples/learning/invalid.pdf">Non-existent file (HTTP 404)</option>
               </select>
               <input type="url" id="customDownloadUrl" placeholder="Or enter custom URL">
             </div>
@@ -141,6 +142,7 @@ window.customElements.define(
               <select id="uploadUrl" class="url-select">
                 <option value="">Select an upload endpoint</option>
                 <option value="https://httpbin.org/post">HTTPBin (Test File Upload)</option>
+                <option value="https://api.github.com/repos/octocat/Spoon-Knife/issues">Non-Upload URL (HTTP error)</option>
               </select>
               <input type="url" id="customUploadUrl" placeholder="Or enter custom URL">
             </div>
