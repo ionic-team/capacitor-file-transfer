@@ -31,7 +31,14 @@ try {
         progress: true
     });
 } catch(error) {
-    // handle error - see `FileTransferError` interface for what error information is returned
+    if (error.code === 'OS-PLUG-FLTR-0010') {
+      // HTTP error - see `FileTransferError` for details on fields available in `errorData`
+      let errorData = error.data;
+      this.showError('Upload failed: ' + errorData.httpStatus + '; ' + errorData.body);
+    } else {
+      // other errors - use `error.code` and `error.message` for more information.
+      this.showError('Upload failed: ' + error.code + '; ' + error.message);
+    }
 }
 
 // Progress events
@@ -67,10 +74,16 @@ try {
     });
     // get server response and other info from result - see `UploadFileResult` interface
 } catch(error) {
-    // handle error - see `FileTransferError` interface for what error information is returned
+    if (error.code === 'OS-PLUG-FLTR-0010') {
+      // HTTP error - see `FileTransferError` for details on fields available in `errorData`
+      let errorData = error.data;
+      this.showError('Upload failed: ' + errorData.httpStatus + '; ' + errorData.body);
+    } else {
+      // other errors - use `error.code` and `error.message` for more information.
+      this.showError('Upload failed: ' + error.code + '; ' + error.message);
+    }
 }
 ```
-
 
 ## API
 
