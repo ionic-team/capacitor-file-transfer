@@ -277,11 +277,19 @@ export interface FileTransferError {
 export interface FileTransferPlugin {
   /**
    * Perform an HTTP request to a server and download the file to the specified destination.
+   * 
+   * If the server returns an HTTP error (e.g. 404, 500, etc.), the promise will be rejected.
+   * To get information about the error response, use the `FileTransferError` interface available at `error.data` attribute.
+   * 
    * @since 1.0.0
    */
   downloadFile(options: DownloadFileOptions): Promise<DownloadFileResult>;
   /**
-   * Perform an HTTP request to upload a file to a server
+   * Perform an HTTP request to upload a file to a server.
+   * 
+   * If the server returns an HTTP error (e.g. 404, 500, etc.), the promise will be rejected.
+   * To get information about the error response, use the `FileTransferError` interface available at `error.data` attribute.
+   * 
    * @since 1.0.0
    */
   uploadFile(options: UploadFileOptions): Promise<UploadFileResult>;
