@@ -13,6 +13,7 @@ import type {
 // Type definitions for the Capacitor Filesystem API
 interface FilesystemPlugin {
   readFile(options: { path: string }): Promise<{ data: string }>;
+  stat(options: { path: string }): Promise<{ data: string }>;
   writeFile(options: {
     path: string;
     data: string;
@@ -63,7 +64,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
         });
 
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`HTTP error: ${response.status}`);
         }
 
         // Handle progress reporting during download if needed
@@ -233,7 +234,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
               headers,
             });
           } else {
-            reject(new Error(`HTTP error! status: ${xhr.status}`));
+            reject(new Error(`HTTP error: ${xhr.status}`));
           }
         };
 
@@ -470,9 +471,11 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
       const pathParts = path.split("/");
       if (pathParts.length > 1) {
         const directory = pathParts.slice(0, -1).join("/");
-        await filesystem.mkdir({
-          path: directory,
-          recursive: true,
+        await filesystem.stat({path: directory}).catch(async ()=>{
+          await filesystem.mkdir({
+           path: directory,
+           recursive: true,
+          });
         });
       }
 
