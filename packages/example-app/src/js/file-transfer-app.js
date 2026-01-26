@@ -251,7 +251,7 @@ window.customElements.define(
           });
         }
       } catch (error) {
-        this.showError('Directory initialization error: ' + error.message);
+        this.showError('Directory initialization error: ' + error.code + " -> " + error.message);
       }
     }
 
@@ -322,7 +322,7 @@ window.customElements.define(
 
         this.showResponse('Download completed', result);
       } catch (error) {
-        this.showError('Download failed: ' + error.message);
+        this.showError('Download failed: ' + JSON.stringify(error, null, 2));
       }
     }
 
