@@ -81,7 +81,7 @@ object FileTransferErrors {
     
     fun httpError(responseCode: String, message: String, responseBody: String?, headers: Map<String, List<String>>?) = ErrorInfo(
         code = formatErrorCode(10),
-        message = "HTTP error: $responseCode - $message",
+        message = message,
         httpStatus = responseCode.toIntOrNull(),
         body = responseBody,
         headers = headers,
