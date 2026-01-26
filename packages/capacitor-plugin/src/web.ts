@@ -471,10 +471,10 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
       const pathParts = path.split("/");
       if (pathParts.length > 1) {
         const directory = pathParts.slice(0, -1).join("/");
-        await filesystem.stat({path: directory}).catch(async ()=>{
+        await filesystem.stat({ path: directory }).catch(async () => {
           await filesystem.mkdir({
-           path: directory,
-           recursive: true,
+            path: directory,
+            recursive: true,
           });
         });
       }
