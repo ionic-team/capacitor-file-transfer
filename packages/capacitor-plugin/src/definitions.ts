@@ -311,4 +311,7 @@ export interface FileTransferPlugin {
    * @since 1.0.0
    */
   removeAllListeners(): Promise<void>;
+
+  /** @internal used to make FileTransferError available in `@capacitor/docgen` */
+  _fileTransferErrorType?: FileTransferError;
 }
