@@ -263,6 +263,11 @@ export interface FileTransferError {
    */
   httpStatus?: number;
   /**
+   * HTTP headers from the server response (if available)
+   * @since 1.0.0
+   */
+  headers?: { [key: string]: string };
+  /**
    * HTTP error response body from the server (if available)
    * @since 1.0.0
    */
