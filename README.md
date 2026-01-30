@@ -48,7 +48,12 @@ try {
         progress: true
     });
 } catch(error) {
-    // handle error - see `FileTransferError` interface for what error information is returned
+    if (error.code === 'OS-PLUG-FLTR-0010') {
+      // HTTP error - see `FileTransferError` for details on fields available in `errorData`
+      let errorData = error.data;
+    } else {
+      // other errors - use `error.code` and `error.message` for more information.
+    }
 }
 
 // Progress events
@@ -84,7 +89,12 @@ try {
     });
     // get server response and other info from result - see `UploadFileResult` interface
 } catch(error) {
-    // handle error - see `FileTransferError` interface for what error information is returned
+    if (error.code === 'OS-PLUG-FLTR-0010') {
+      // HTTP error - see `FileTransferError` for details on fields available in `errorData`
+      let errorData = error.data;
+    } else {
+      // other errors - use `error.code` and `error.message` for more information.
+    }
 }
 ```
 
