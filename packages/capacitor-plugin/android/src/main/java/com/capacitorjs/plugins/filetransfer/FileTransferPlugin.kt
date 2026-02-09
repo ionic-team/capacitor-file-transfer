@@ -6,6 +6,7 @@ import android.media.MediaScannerConnection
 import android.os.Build
 import android.os.Environment
 import androidx.core.net.toUri
+import com.getcapacitor.JSArray
 import com.getcapacitor.JSObject
 import com.getcapacitor.PermissionState
 import com.getcapacitor.Plugin
@@ -155,7 +156,8 @@ class FileTransferPlugin : Plugin() {
         val options = IONFLTRDownloadOptions(
             url = url,
             filePath = filePath,
-            httpOptions = httpOptions
+            httpOptions = httpOptions,
+            body = getRequestBody(call, httpOptions)
         )
 
         controller.downloadFile(options)
