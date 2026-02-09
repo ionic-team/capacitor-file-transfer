@@ -185,6 +185,13 @@ class FileTransferPlugin : Plugin() {
                         
                         val response = JSObject().apply {
                             put("path", filePath)
+                            result.data.headers?.let { headers ->
+                                val headersObject = JSObject()
+                                for (header in headers) {
+                                    headersObject.put(header.key, JSArray(header.value))
+                                }
+                                put("headers", headersObject);
+                            }
                         }
                         call.resolve(response)
                     }
