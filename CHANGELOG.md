@@ -5,7 +5,7 @@
 
 * Align HTTP error message ([#55](https://github.com/ionic-team/capacitor-file-transfer/issues/55)) ([a1702d0](https://github.com/ionic-team/capacitor-file-transfer/commit/a1702d0e1a25cda539d9e5a73be3ee11bc594fab))
 * **android:** AGP 9.0 no longer supporting `proguard-android.txt` ([#57](https://github.com/ionic-team/capacitor-file-transfer/issues/57)) ([2eea2f7](https://github.com/ionic-team/capacitor-file-transfer/commit/2eea2f76de74a5ed3c5e1643e7d56a847f561763))
-* **ios:** http body in error and send progress only when success ([#59](https://github.com/ionic-team/capacitor-file-transfer/issues/59)) ([da7a5fd](https://github.com/ionic-team/capacitor-file-transfer/commit/da7a5fd5acc6f1a1331fedf433d0dff846cb5214))
+* **ios:** http body in error and send progress only when success ([#59](https://github.com/ionic-team/capacitor-file-transfer/issues/59)) ([da7a5fd](https://github.com/ionic-team/capacitor-file-transfer/commit/da7a5fd5acc6f1a1331fedf433d0dff846cb5214)) (indirectly fixes [#58](https://github.com/ionic-team/capacitor-file-transfer/issues/58))
 * **web:** Check the existence of the folder before mkdir. ([#33](https://github.com/ionic-team/capacitor-file-transfer/issues/33)) ([0f0658f](https://github.com/ionic-team/capacitor-file-transfer/commit/0f0658ffff5d89be468e5b9e7ee3e26cdb905c18))
 
 ## [2.0.3](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.2...v2.0.3) (2026-01-14)
