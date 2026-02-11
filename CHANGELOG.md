@@ -1,3 +1,14 @@
+## [1.0.10](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.9...v1.0.10) (2026-02-11)
+
+
+### Bug Fixes
+
+* Align HTTP error message ([#55](https://github.com/ionic-team/capacitor-file-transfer/issues/55)) ([d50c7d6](https://github.com/ionic-team/capacitor-file-transfer/commit/d50c7d68046f2afe4295d81987eeb13514952b7b))
+* **android:** Correctly returning headers for upload ([#46](https://github.com/ionic-team/capacitor-file-transfer/issues/46)) ([93eab42](https://github.com/ionic-team/capacitor-file-transfer/commit/93eab427d0d041adf7bdc09c7cf6dcc00acd93c3))
+* **ios:** http body in error and send progress only when success ([#59](https://github.com/ionic-team/capacitor-file-transfer/issues/59)) ([d0e43cc](https://github.com/ionic-team/capacitor-file-transfer/commit/d0e43ccf611bd54b507953af634ee1d354203eac))
+* **ios:** Send upload response code as string instead of number ([#49](https://github.com/ionic-team/capacitor-file-transfer/issues/49)) ([ba0c1d2](https://github.com/ionic-team/capacitor-file-transfer/commit/ba0c1d21913118579cc48f7b60685592c745baa9))
+* **web:** Check the existence of the folder before mkdir. ([#33](https://github.com/ionic-team/capacitor-file-transfer/issues/33)) ([58ea4b6](https://github.com/ionic-team/capacitor-file-transfer/commit/58ea4b682ce9fd607a8fbf1065ec244cc7cae997))
+
 ## [1.0.9](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.8...v1.0.9) (2026-01-14)
 
 
