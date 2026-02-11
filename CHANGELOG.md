@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.10...v1.0.11) (2026-02-11)
+
+
+### Bug Fixes
+
+* **android:** AGP 9.0 no longer supporting `proguard-android.txt` ([#57](https://github.com/ionic-team/capacitor-file-transfer/issues/57)) ([b9358d3](https://github.com/ionic-team/capacitor-file-transfer/commit/b9358d359d444e7f37cb81fd14a4006aab515342))
+
 ## [1.0.10](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.9...v1.0.10) (2026-02-11)
 
 
