@@ -16,8 +16,8 @@
     "@capacitor/android": "file:../../../capacitor/android",
     "@capacitor/core": "file:../../../capacitor/core",
     "@capacitor/file-transfer": "file:../capacitor-plugin",
-    "@capacitor/file-viewer": "^1.0.0 || ^2.0.0",
-    "@capacitor/filesystem": "^7.0.0 || ^8.0.0",
+    "@capacitor/file-viewer": "^2.0.0",
+    "@capacitor/filesystem": "^8.0.0",
     "@capacitor/ios": "file:../../../capacitor/ios"
   },
   "devDependencies": {
