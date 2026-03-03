@@ -6,5 +6,12 @@
     "SplashScreen": {
       "launchAutoHide": false
     }
+  },
+  "experimental": {
+    "ios": {
+      "spm": {
+        "swiftToolsVersion": "6.2.1"
+      }
+    }
   }
 }
