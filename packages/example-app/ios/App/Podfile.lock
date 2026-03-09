@@ -7,7 +7,7 @@ PODS:
     - IONFilesystemLib (~> 1.0)
   - CapacitorFileTransfer (1.0.11):
     - Capacitor
-    - IONFileTransferLib (~> 1.0.2)
+    - IONFileTransferLib (= 1.0.2)
   - CapacitorFileViewer (1.0.2):
     - Capacitor
     - IONFileViewerLib (~> 1.0.1)
@@ -44,7 +44,7 @@ SPEC CHECKSUMS:
   Capacitor: 82d1f3b4480d66b5996814f74500dcbc0908558c
   CapacitorCordova: 345f93b7edd121db98e4ec20ac94d6d7bcaf7e48
   CapacitorFilesystem: 0329ace667c6b971410cab3619dfb98a39cc3b86
-  CapacitorFileTransfer: 352b8d9358527e1379e7a9a4eb51d9f560571e37
+  CapacitorFileTransfer: bd7b0d078891beee4c00086bcb7f8a0c59f1770a
   CapacitorFileViewer: 47cf03d7cb5a313cbc1209baa83da2edc6f650be
   IONFilesystemLib: dfa8706539ac9ab77ccfd6e5b3830ce9b5e57f6c
   IONFileTransferLib: f85da429ab97dbcc431f4ea084a6146f36b51029
