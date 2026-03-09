@@ -21,6 +21,8 @@
 
 ## Install
 
+Test
+
 ```bash
 npm install @capacitor/file-transfer@latest-7
 npx cap sync
