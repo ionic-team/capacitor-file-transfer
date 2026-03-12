@@ -12,7 +12,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "7.0.0"),
-        .package(url: "https://github.com/ionic-team/ion-ios-filetransfer.git", from: "1.0.2")
+        .package(url: "https://github.com/ionic-team/ion-ios-filetransfer.git", from: "1.0.3")
     ],
     targets: [
         .target(
