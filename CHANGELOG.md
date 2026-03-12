@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.11...v1.0.12) (2026-03-12)
+
+
+### Bug Fixes
+
+* **ios:** update dependency to IONFileTransferLib to version built with Xcode 16 ([#64](https://github.com/ionic-team/capacitor-file-transfer/issues/64)) ([22382fe](https://github.com/ionic-team/capacitor-file-transfer/commit/22382febbce3319c5e1836f8c76976e6f7b80b4c))
+
 ## [1.0.11](https://github.com/ionic-team/capacitor-file-transfer/compare/v1.0.10...v1.0.11) (2026-02-11)
 
 
