@@ -44,13 +44,13 @@ Then, Rollup will bundle the code into a single file at `dist/plugin.js`. This f
 
 Build and validate the web and native projects.
 
-This is useful to run in CI to verify that the plugin builds for all platforms.
+This is run in CI to verify that the plugin builds for all platforms.
 
 #### `npm run lint` / `npm run fmt`
 
 Check formatting and code quality, autoformat/autofix if possible.
 
-This template is integrated with ESLint, Prettier, and SwiftLint. Using these tools is completely optional, but the [Capacitor Community](https://github.com/capacitor-community/) strives to have consistent code style and structure for easier cooperation.
+The `lint` command is run in CI. We recommend running `lint` and/or `fmt` before opening a PR,
 
 ## Commits/PR's
 
@@ -66,6 +66,6 @@ Publishing is automated based on the branch committed to. When a commit or merge
 | next        | next (these are betas/alphas) | next    | @capacitor/file-transfer@1.0.0-next.1 |
 | main        | latest                        | latest  | @capacitor/file-transfer@1.0.0        |
 
-- In general new developments will go straight to `main`. If we want to have non-stable versions (e.g. for new Capacitor versions or when there are many changes), we may use `next` or `development` branch, and then once they are ready for stable version, open a PR to main (should be rebased to keep history).
+- In general new developments will go straight to `main`. If we want to have non-stable versions (e.g. for new Capacitor versions or when there are many changes), we may use `next` or `development` branch, and then once they are ready for stable version, open a PR to main (should be merged to keep commit hashes for `semantic-release`).
 
-> **Note**: The [`files`](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files) array in `package.json` specifies which files get published. If you rename files/directories or add files elsewhere, you may need to update it.
+> **Note**: The [`files`](https://docs.npmjs.com/cli/configuring-npm/package-json) array in `package.json` specifies which files get published. If you rename files/directories or add files elsewhere, you may need to update it.
