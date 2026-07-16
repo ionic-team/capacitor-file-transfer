@@ -1,0 +1,49 @@
+PODS:
+  - Capacitor (9.0.0-alpha.6)
+  - CapacitorFilesystem (8.0.0-next.4):
+    - Capacitor
+    - IONFilesystemLib (~> 1.0.1)
+  - CapacitorFileTransfer (2.0.4):
+    - Capacitor
+    - IONFileTransferLib (~> 1.0.2)
+  - CapacitorFileViewer (2.0.0-next.4):
+    - Capacitor
+    - IONFileViewerLib (~> 1.0.3)
+  - IONFilesystemLib (1.0.1)
+  - IONFileTransferLib (1.0.3)
+  - IONFileViewerLib (1.0.3)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorFilesystem (from `../../node_modules/@capacitor/filesystem`)"
+  - CapacitorFileTransfer (from `../../../capacitor-plugin`)
+  - "CapacitorFileViewer (from `../../node_modules/@capacitor/file-viewer`)"
+
+SPEC REPOS:
+  trunk:
+    - IONFilesystemLib
+    - IONFileTransferLib
+    - IONFileViewerLib
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorFilesystem:
+    :path: "../../node_modules/@capacitor/filesystem"
+  CapacitorFileTransfer:
+    :path: "../../../capacitor-plugin"
+  CapacitorFileViewer:
+    :path: "../../node_modules/@capacitor/file-viewer"
+
+SPEC CHECKSUMS:
+  Capacitor: b5cc4a2eadcd1184d4a581b4c631dd8ef7bb34b1
+  CapacitorFilesystem: eb0cee773e4bbedd96b32ea06f91d58100e0e421
+  CapacitorFileTransfer: d555c27a2672ab83d9405bb337c26a5f42c3bcf7
+  CapacitorFileViewer: 3ff554ef0b1b4ea900341046a333b5586c7ff10f
+  IONFilesystemLib: 89258b8e3e85465da93127d25d7ce37f977e8a6f
+  IONFileTransferLib: addbbf50405c163dcd74a7b1bd8c6f9302342be2
+  IONFileViewerLib: 574758ebcaa4b1543669b1c9708f1970e1172b29
+
+PODFILE CHECKSUM: 87ed087f771bb6285058d46f0c62d8e239b59cfc
+
+COCOAPODS: 1.16.2
