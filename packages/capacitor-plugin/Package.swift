@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "CapacitorFileTransfer",
-    platforms: [.iOS(.v15)],
+    platforms: [.iOS(.v16)],
     products: [
         .library(
             name: "CapacitorFileTransfer",
@@ -11,7 +11,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "8.0.0"),
+        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "9.0.0-alpha.5"),
         .package(url: "https://github.com/ionic-team/ion-ios-filetransfer.git", from: "1.0.2")
     ],
     targets: [
@@ -19,7 +19,6 @@ let package = Package(
             name: "FileTransferPlugin",
             dependencies: [
                 .product(name: "Capacitor", package: "capacitor-swift-pm"),
-                .product(name: "Cordova", package: "capacitor-swift-pm"),
                 .product(name: "IONFileTransferLib", package: "ion-ios-filetransfer")
             ],
             path: "ios/Sources/FileTransferPlugin"),
