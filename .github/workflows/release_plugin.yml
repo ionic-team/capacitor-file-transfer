@@ -33,9 +33,7 @@ jobs:
   
   release-please:
     runs-on: ubuntu-latest
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
-      tag_name: ${{ steps.release.outputs.tag_name }}
+    needs: 'setup'
     steps:
       - name: Run release-please
         id: release
@@ -47,7 +45,7 @@ jobs:
           target-branch: ${{ github.ref_name }}
 
   release:
-    needs: ['setup','lint','build-packages']
+    needs: ['setup','lint','build-packages','release-please']
     runs-on: 'ubuntu-latest'
     timeout-minutes: 30
     steps:
