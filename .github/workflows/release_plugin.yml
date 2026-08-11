@@ -1,10 +1,6 @@
 name: "Release Plugin"
 
 on:
-  push:
-    branches:
-      - development
-      - next
   workflow_dispatch:
 
 permissions:
