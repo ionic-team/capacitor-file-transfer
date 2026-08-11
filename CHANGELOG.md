@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.4...v2.0.5) (2026-08-11)
+
+
+### Bug Fixes
+
+* **android:** only apply kotlin-android plugin if not already applied ([#75](https://github.com/ionic-team/capacitor-file-transfer/issues/75)) ([b2223e5](https://github.com/ionic-team/capacitor-file-transfer/commit/b2223e5d81e5b61a71f207d1ca056a9cce54f765))
+
 ## [2.0.4](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.3...v2.0.4) (2026-02-10)
 
 
