@@ -30,6 +30,21 @@ jobs:
     uses: ./.github/workflows/reusable_build.yml
     secrets:
       THE_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+  
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - name: Run release-please
+        id: release
+        uses: googleapis/release-please-action@v5
+        with:
+          token: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+          target-branch: ${{ github.ref_name }}
 
   release:
     needs: ['setup','lint','build-packages']
@@ -47,4 +62,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
           GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
-        run: npx semantic-release
+        run: npm publish --tag next --provenance
