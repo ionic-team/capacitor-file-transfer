@@ -44,7 +44,12 @@ jobs:
     runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v7
+      - name: 'Setup Environment'
+        id: setup
+        uses: ionic-team/capacitor-actions/setup-tools@0593e5113cff6305d18e218c9d6768fd010406b4
+        with:
+          working-directory: ./packages/capacitor-plugin
+          gh-token: ${{ github.token }}
       - name: 'Prepare example app'
         uses: ./.github/actions/prepare-example-app
       - name: 'Build Android example app'
@@ -56,7 +61,12 @@ jobs:
     runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v7
+      - name: 'Setup Environment'
+        id: setup
+        uses: ionic-team/capacitor-actions/setup-tools@0593e5113cff6305d18e218c9d6768fd010406b4
+        with:
+          working-directory: ./packages/capacitor-plugin
+          gh-token: ${{ github.token }}
       - name: 'Prepare example app'
         uses: ./.github/actions/prepare-example-app
       - name: 'Build iOS example app'
