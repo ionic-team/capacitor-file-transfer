@@ -6,10 +6,14 @@ on:
 
 jobs:
   setup:
-    uses: ionic-team/capacitor-actions/setup-tools@0593e5113cff6305d18e218c9d6768fd010406b4
-    with:
-        working-directory: ./packages/capacitor-plugin
-        token: ${{ github.token }}
+    runs-on: 'macos-15'
+    steps:
+      - name: 'Setup Environment'
+        id: setup
+        uses: ionic-team/capacitor-actions/setup-tools@0593e5113cff6305d18e218c9d6768fd010406b4
+        with:
+          working-directory: ./packages/capacitor-plugin
+          token: ${{ github.token }}
 
   lint:
     needs: 'setup'
