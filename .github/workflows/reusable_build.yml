@@ -11,13 +11,12 @@ jobs:
     runs-on: "ubuntu-latest"
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v7
+      - name: 'Setup Environment'
+        id: setup
+        uses: ionic-team/capacitor-actions/setup-tools@0593e5113cff6305d18e218c9d6768fd010406b4
         with:
-          fetch-depth: 0
-          token: ${{ secrets.THE_GH_RELEASE_TOKEN || github.token }}
-
-      - name: "Setup Tools"
-        uses: ./.github/actions/setup-tools
+          working-directory: ./packages/capacitor-plugin
+          gh-token: ${{ github.token }}
 
       - name: "Copy README.md in root"
         working-directory: ./packages/capacitor-plugin
