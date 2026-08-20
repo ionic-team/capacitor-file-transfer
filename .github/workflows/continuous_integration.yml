@@ -12,7 +12,6 @@ jobs:
     uses: ./.github/workflows/reusable_build.yml
 
   verify-plugin-android:
-    needs: ['lint', 'build']
     runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
@@ -27,7 +26,6 @@ jobs:
         run: npm run verify:android
 
   verify-plugin-ios:
-    needs: ['lint', 'build']
     runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
@@ -42,7 +40,7 @@ jobs:
         run: npm run verify:ios
 
   build-example-app-android:
-    needs: ['verify-plugin-ios', 'verify-plugin-android']
+    needs: 'verify-plugin-android'
     runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
@@ -53,7 +51,7 @@ jobs:
         run: ./gradlew clean assembleDebug
     
   build-example-app-ios:
-    needs: ['verify-plugin-ios', 'verify-plugin-android']
+    needs: 'verify-plugin-ios'
     runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
