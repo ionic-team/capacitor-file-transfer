@@ -27,21 +27,8 @@ jobs:
     secrets:
       THE_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
   
-  release-please:
-    runs-on: ubuntu-latest
-    needs: 'setup'
-    steps:
-      - name: Run release-please
-        id: release
-        uses: googleapis/release-please-action@v5
-        with:
-          token: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
-          config-file: release-please-config.json
-          manifest-file: .release-please-manifest.json
-          target-branch: ${{ github.ref_name }}
-
   release:
-    needs: ['setup','lint','build-packages','release-please']
+    needs: ['setup','lint','build-packages']
     runs-on: 'ubuntu-latest'
     timeout-minutes: 30
     steps:
