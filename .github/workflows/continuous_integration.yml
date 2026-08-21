@@ -70,3 +70,4 @@ jobs:
       - name: 'Build iOS example app'
         working-directory: ./packages/example-app/ios/App
         run: xcodebuild clean build -workspace App.xcworkspace -scheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+        
