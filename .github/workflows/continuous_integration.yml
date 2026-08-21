@@ -6,10 +6,10 @@ on:
 
 jobs:
   lint:
-    uses: ./.github/workflows/reusable_lint.yml
+    uses: ionic-team/.github/.github/workflows/reusable_lint.yml@6e0e4d4171ed6678b903056cbe5832dd135d07d4
 
   build:
-    uses: ./.github/workflows/reusable_build.yml
+    uses: ionic-team/.github/.github/workflows/reusable_build.yml@6e0e4d4171ed6678b903056cbe5832dd135d07d4
 
   verify-plugin-android:
     runs-on: 'macos-15'
@@ -40,7 +40,6 @@ jobs:
         run: npm run verify:ios
 
   build-example-app-android:
-    needs: 'verify-plugin-android'
     runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
@@ -57,7 +56,6 @@ jobs:
         run: ./gradlew clean assembleDebug
     
   build-example-app-ios:
-    needs: 'verify-plugin-ios'
     runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
