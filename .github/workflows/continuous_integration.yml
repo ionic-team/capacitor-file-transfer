@@ -6,10 +6,10 @@ on:
 
 jobs:
   lint:
-    uses: ionic-team/.github/.github/workflows/reusable_lint.yml@ce76eaeebc6bb5bb0ddb2c88ada46f6d107a002d
+    uses: ionic-team/capacitor-actions/.github/workflows/reusable_lint.yml@ce76eaeebc6bb5bb0ddb2c88ada46f6d107a002d
 
   build:
-    uses: ionic-team/.github/.github/workflows/reusable_build.yml@ce76eaeebc6bb5bb0ddb2c88ada46f6d107a002d
+    uses: ionic-team/capacitor-actions/.github/workflows/reusable_build.yml@ce76eaeebc6bb5bb0ddb2c88ada46f6d107a002d
 
   verify-plugin-android:
     runs-on: 'macos-15'
