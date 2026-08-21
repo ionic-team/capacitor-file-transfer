@@ -6,10 +6,10 @@ on:
 
 jobs:
   lint:
-    uses: ionic-team/.github/.github/workflows/reusable_lint.yml@6e0e4d4171ed6678b903056cbe5832dd135d07d4
+    uses: ionic-team/.github/.github/workflows/reusable_lint.yml@ce76eaeebc6bb5bb0ddb2c88ada46f6d107a002d
 
   build:
-    uses: ionic-team/.github/.github/workflows/reusable_build.yml@6e0e4d4171ed6678b903056cbe5832dd135d07d4
+    uses: ionic-team/.github/.github/workflows/reusable_build.yml@ce76eaeebc6bb5bb0ddb2c88ada46f6d107a002d
 
   verify-plugin-android:
     runs-on: 'macos-15'
@@ -70,4 +70,3 @@ jobs:
       - name: 'Build iOS example app'
         working-directory: ./packages/example-app/ios/App
         run: xcodebuild clean build -workspace App.xcworkspace -scheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
-        
