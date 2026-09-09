@@ -1,4 +1,3 @@
-/* eslint-env browser */
 import { WebPlugin } from "@capacitor/core";
 import type {
   FileTransferPlugin,
