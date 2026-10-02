@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.5...v2.0.6) (2026-10-02)
+
+
+### Bug Fixes
+
+* **ios:** update native lib to latest version ([#84](https://github.com/ionic-team/capacitor-file-transfer/issues/84)) ([77938fa](https://github.com/ionic-team/capacitor-file-transfer/commit/77938fa8ebfd165b301e5693a24e7e066f5a7eea))
+
 ## [2.0.5](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.4...v2.0.5) (2026-08-11)
 
 
