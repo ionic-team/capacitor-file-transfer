@@ -32,11 +32,14 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
     @objc func downloadFile(_ call: CAPPluginCall) {
         do {
             let prepData = try validateAndPrepare(call: call, action: .download)
+            var httpOptions = prepData.httpOptions
+            let reqData = try getRequestData(call: call, options: &httpOptions)
 
             try manager.downloadFile(
                 fromServerURL: prepData.serverURL,
                 toFileURL: prepData.fileURL,
-                withHttpOptions: prepData.httpOptions
+                withHttpOptions: httpOptions,
+                body: reqData
             ).sink(
                 receiveCompletion: handleCompletion(call: call, source: prepData.serverURL.absoluteString, target: prepData.fileURL.absoluteString),
                 receiveValue: handleReceiveValue(
@@ -225,7 +228,7 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
                 let result: JSObject = {
                     switch type {
                     case .download:
-                        return ["path": path]
+                        return ["path": path, "headers": data.headers as JSObject]
                     case .upload:
                         return [
                             "bytesSent": data.totalBytes,
