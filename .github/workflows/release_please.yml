@@ -1,4 +1,4 @@
-name: "Release Plugin"
+name: "Create Release PR with Release Please"
 
 on:
   workflow_dispatch:
@@ -10,22 +10,22 @@ permissions:
     id-token: write # to enable use of OIDC for npm provenance and trusted publishing
 
 jobs:
-  setup:
-    uses: ./.github/workflows/reusable_setup.yml
-    secrets:
-      THE_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
-
   release-please:
     runs-on: ubuntu-latest
-    needs: 'setup'
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
     steps:
+      - name: 'Setup Environment'
+        id: setup
+        uses: ionic-team/capacitor-actions/setup-tools@0593e5113cff6305d18e218c9d6768fd010406b4
+        with:
+          working-directory: ./packages/capacitor-plugin
+          gh-token: ${{ github.token }}
       - name: Run release-please
         id: release
         uses: googleapis/release-please-action@v5
         with:
-          token: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+          token: ${{ github.token }}
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
           target-branch: ${{ github.ref_name }}
