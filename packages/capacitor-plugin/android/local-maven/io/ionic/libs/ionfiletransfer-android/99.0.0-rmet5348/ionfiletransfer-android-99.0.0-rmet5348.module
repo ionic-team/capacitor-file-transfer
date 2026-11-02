@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.ionic.libs",
+    "module": "ionfiletransfer-android",
+    "version": "99.0.0-rmet5348",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.25"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ionfiletransfer-android-99.0.0-rmet5348.aar",
+          "url": "ionfiletransfer-android-99.0.0-rmet5348.aar",
+          "size": 70386,
+          "sha512": "3589b536e45a051bb6fbf28a2b10affd3c84dec71dc8669ef9f5ac77f9ee2e8c9ef60f3ff9c6ed1721b13406c3df2088dd43d3e34716a9cd2076f31d88e5c69c",
+          "sha256": "20a666e59c70c893efcceba36cee5204d9b4e925bceb6adb7b2a43abc341987a",
+          "sha1": "28ba77c53e09ecd263ae2bd7f6028bbbec08c87a",
+          "md5": "99d6d0badbcf4f5097bbff0ed00cc195"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.16.0"
+          }
+        },
+        {
+          "group": "androidx.activity",
+          "module": "activity-ktx",
+          "version": {
+            "requires": "1.10.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.25"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ionfiletransfer-android-99.0.0-rmet5348.aar",
+          "url": "ionfiletransfer-android-99.0.0-rmet5348.aar",
+          "size": 70386,
+          "sha512": "3589b536e45a051bb6fbf28a2b10affd3c84dec71dc8669ef9f5ac77f9ee2e8c9ef60f3ff9c6ed1721b13406c3df2088dd43d3e34716a9cd2076f31d88e5c69c",
+          "sha256": "20a666e59c70c893efcceba36cee5204d9b4e925bceb6adb7b2a43abc341987a",
+          "sha1": "28ba77c53e09ecd263ae2bd7f6028bbbec08c87a",
+          "md5": "99d6d0badbcf4f5097bbff0ed00cc195"
+        }
+      ]
+    }
+  ]
+}
