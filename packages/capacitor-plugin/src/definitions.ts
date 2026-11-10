@@ -84,6 +84,11 @@ export interface DownloadFileResult {
    * @since 1.0.0
    */
   blob?: Blob;
+  /**
+   * HTTP headers from the download response (when available)
+   * @since 2.1.0
+   */
+  headers?: { [key: string]: string };
 }
 
 export interface UploadFileOptions extends HttpOptions {
