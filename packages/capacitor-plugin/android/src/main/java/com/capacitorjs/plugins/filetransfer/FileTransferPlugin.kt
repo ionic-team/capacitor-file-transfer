@@ -143,8 +143,8 @@ class FileTransferPlugin : Plugin() {
             return
         }
 
-        // Check for storage permissions before proceeding
-        if (!isStoragePermissionGranted()) {
+        // App-specific directories need no storage permission, only public ones do
+        if (isPublicDirectory(filePath) && !isStoragePermissionGranted()) {
             requestAllPermissions(call, "permissionCallback")
             return
         }
