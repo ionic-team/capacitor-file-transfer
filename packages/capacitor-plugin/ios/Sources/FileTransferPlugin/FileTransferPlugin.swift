@@ -225,20 +225,28 @@ public class FileTransferPlugin: CAPPlugin, CAPBridgedPlugin {
                 let result: JSObject = {
                     switch type {
                     case .download:
-                        return ["path": path]
+                        return [
+                            "path": path,
+                            "headers": self.headersObject(from: data.headers)
+                        ]
                     case .upload:
                         return [
                             "bytesSent": data.totalBytes,
                             "responseCode": "\(data.responseCode)",
                             "response": data.responseBody ?? "",
-                            "headers": data.headers.reduce(into: JSObject()) { result, entry in
-                                result[entry.key] = entry.value
-                            }
+                            "headers": self.headersObject(from: data.headers)
                         ]
                     }
                 }()
                 call.resolve(result)
             }
+        }
+    }
+
+    /// Converts response headers to a JSObject with one string value per header.
+    private func headersObject(from headers: [String: String]) -> JSObject {
+        headers.reduce(into: JSObject()) { result, entry in
+            result[entry.key] = entry.value
         }
     }
 

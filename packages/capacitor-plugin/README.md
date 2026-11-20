@@ -186,10 +186,11 @@ Remove all listeners for this plugin.
 
 #### DownloadFileResult
 
-| Prop       | Type                | Description                                                          | Since |
-| ---------- | ------------------- | -------------------------------------------------------------------- | ----- |
-| **`path`** | <code>string</code> | The path the file was downloaded to.                                 | 1.0.0 |
-| **`blob`** | <code>Blob</code>   | The blob data of the downloaded file. This is only available on web. | 1.0.0 |
+| Prop          | Type                                    | Description                                                          | Since |
+| ------------- | --------------------------------------- | -------------------------------------------------------------------- | ----- |
+| **`path`**    | <code>string</code>                     | The path the file was downloaded to.                                 | 1.0.0 |
+| **`blob`**    | <code>Blob</code>                       | The blob data of the downloaded file. This is only available on web. | 1.0.0 |
+| **`headers`** | <code>{ [key: string]: string; }</code> | HTTP headers from the download response (when available)             | 2.1.0 |
 
 
 #### DownloadFileOptions

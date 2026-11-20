@@ -56,6 +56,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
 
       let blob: Blob;
       let totalBytes = 0;
+      const responseHeaders: { [key: string]: string } = {};
 
       try {
         const response = await fetch(url, {
@@ -66,6 +67,10 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
         }
+
+        response.headers.forEach((value, key) => {
+          responseHeaders[key] = value;
+        });
 
         // Handle progress reporting during download if needed
         if (options.progress && response.body) {
@@ -141,6 +146,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
         return {
           path: options.path,
           blob,
+          headers: responseHeaders,
         };
       }
 
@@ -161,6 +167,7 @@ export class FileTransferWeb extends WebPlugin implements FileTransferPlugin {
       return {
         blob,
         path: options.path,
+        headers: responseHeaders,
       };
     } catch (error) {
       throw this.handleError(error, options.url, options.path);

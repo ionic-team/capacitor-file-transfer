@@ -185,6 +185,7 @@ class FileTransferPlugin : Plugin() {
                         
                         val response = JSObject().apply {
                             put("path", filePath)
+                            put("headers", toHeadersObject(result.data.headers))
                         }
                         call.resolve(response)
                     }
@@ -253,17 +254,11 @@ class FileTransferPlugin : Plugin() {
                             notifyProgress("upload", url, finalStatus, forceUpdate = true)
                         }
 
-                        val headersObj = JSObject()
-                        result.data.headers?.entries?.forEach { (key, values) ->
-                            key?.let { headerKey ->
-                                headersObj.put(headerKey, values.firstOrNull() ?: "")
-                            }
-                        }
                         val response = JSObject().apply {
                             put("bytesSent", result.data.totalBytes)
                             put("responseCode", result.data.responseCode)
                             put("response", result.data.responseBody)
-                            put("headers", headersObj)
+                            put("headers", toHeadersObject(result.data.headers))
                         }
                         call.resolve(response)
                     }
@@ -278,6 +273,18 @@ class FileTransferPlugin : Plugin() {
             }
             .launchIn(ioScope)
     }
+
+    /**
+     * Converts response headers to a JSObject, keeping the first value of each header
+     * @param headers The response headers, keyed by header name
+     * @return A JSObject with one string value per header
+     */
+    private fun toHeadersObject(headers: Map<out String?, List<String>>?): JSObject =
+        JSObject().apply {
+            headers?.forEach { (key, values) ->
+                key?.let { put(it, values.firstOrNull() ?: "") }
+            }
+        }
 
     /**
      * Permission callback for when the user responds to permission requests
