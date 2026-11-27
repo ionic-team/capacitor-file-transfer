@@ -1,3 +1,10 @@
+## [2.0.7](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.6...v2.0.7) (2026-11-27)
+
+
+### Bug Fixes
+
+* **android:** bump ionfiletransfer-android to 2.0.0 ([#95](https://github.com/ionic-team/capacitor-file-transfer/issues/95)) ([52d9969](https://github.com/ionic-team/capacitor-file-transfer/commit/52d9969442cc64978baecdab8278504f0917adf2))
+
 ## [2.0.6](https://github.com/ionic-team/capacitor-file-transfer/compare/v2.0.5...v2.0.6) (2026-10-02)
 
 
